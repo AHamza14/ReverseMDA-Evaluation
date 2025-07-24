@@ -1,0 +1,28 @@
+@startuml PM_Model_Technology_ASP_NET_Core_Services
+' PM: Technology ASP.NET Core Services Model
+
+package "ASP.NET Core Services" {
+    class ILogger {
+        +logLevel
+    }
+    class IEmailSender {
+        +options
+        +SendEmailAsync()
+    }
+    class IServiceProvider
+    class IActionResult
+    class Task
+    class HttpClient {
+        +baseAddress
+        +SendAsync()
+    }
+    class AuthenticationScheme {
+        +name
+    }
+}
+
+ILogger ..|> IServiceProvider
+IEmailSender ..|> IServiceProvider
+HttpClient ..> Task
+
+@enduml

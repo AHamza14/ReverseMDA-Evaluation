@@ -1,0 +1,152 @@
+@startuml PIM_Model
+' Complete Platform-Independent Model
+
+package "BlockchainSharp.Core" {
+    class Block {
+        +transactions : IList<Transaction>
+        +number : ulong
+        +hash : BlockHash
+        +parenthash : BlockHash
+        +isgenesis : bool
+        +HasParent(parent : Block) : bool
+        +CalculateHash(bytes : byte[]) : Hash
+    }
+
+    class BlockChain {
+        +bestBlock : Block
+        +bestblocknumber : ulong
+        +TryToAdd(block : Block) : bool
+        +HasBlock(hash : BlockHash) : bool
+        +GetBlock(n : ulong) : Block
+    }
+
+    class Transaction {
+        +sender : Address
+        +receiver : Address
+        +value : BigInteger
+        +hash : Hash
+        +CalculateHash() : Hash
+    }
+
+    class AccountState {
+        +balance : BigInteger
+        +nonce : ulong
+        +AddToBalance(amount : BigInteger) : AccountState
+        +SubtractFromBalance(amount : BigInteger) : AccountState
+    }
+
+    class AccountsState {
+        +states : Trie
+        +Put(address : Address, state : AccountState) : AccountsState
+        +Get(address : Address) : AccountState
+    }
+
+    class BlockHeader {
+        +number : ulong
+        +parentHash : BlockHash
+        +transactionsHash : Hash
+        +hash : BlockHash
+    }
+
+    class BlockInfo {
+        +block : Block
+        +state : AccountsState
+    }
+
+    class Status {
+        +height : ulong
+        +hash : BlockHash
+    }
+
+    class BlockHash {
+        +Calculate(header : BlockHeader) : BlockHash
+        +CalculateHash(header : BlockHeader) : byte[]
+    }
+
+    class Hash {
+        +bytes : byte[]
+    }
+
+    class Address {
+        +bytes : byte[]
+    }
+
+}
+
+package "BlockchainSharp.Processors" {
+    enum BlockProcess {
+        Imported
+        NotImported
+        Known
+        MissingAncestor
+    }
+
+    enum TransactionProcess {
+        Added
+        Known
+    }
+}
+
+package "BlockchainSharp.Net.Messages" {
+    class Message {
+        +messagetype : MessageType
+    }
+
+    class StatusMessage {
+        +status : Status
+    }
+
+    class TransactionMessage {
+        +transaction : Transaction
+    }
+
+    class BlockMessage {
+        +block : Block
+    }
+
+    ' MessageType made attribute in Message (see enum handling)
+}
+
+package "BlockchainSharp.Stores" {
+    class TransactionPool {
+        +transactions : ISet<Transaction>
+        +AddTransaction(transaction : Transaction) : void
+    }
+}
+
+' --- Inheritance ---
+BlockHash --|> Hash
+StatusMessage --|> Message
+TransactionMessage --|> Message
+BlockMessage --|> Message
+
+' --- Associations / Aggregation / Composition ---
+Block --> "0..*" Transaction
+Block --> "1" BlockHeader
+Block --> "2" BlockHash
+Block --> "0..1" AccountsState
+BlockInfo --> "1" Block
+BlockInfo --> "1" AccountsState
+BlockChain --> "0..1" Block
+BlockChain --> "0..*" BlockHash
+AccountsState --> "0..*" AccountState
+AccountsState --> "1" Trie
+AccountState --> "0..*" Hash
+Transaction --> "2" Address
+Transaction --> "1" Hash
+Transaction --> "1" BigInteger
+TransactionPool o--> "0..*" Transaction
+Status --> "1" BlockHash
+BlockMessage --> "1" Block
+StatusMessage --> "1" Status
+TransactionMessage --> "1" Transaction
+BlockHeader --> "2" BlockHash
+BlockHeader --> "1" Hash
+
+enum MessageType {
+    BlockMessage
+    TransactionMessage
+    StatusMessage
+}
+
+@enduml

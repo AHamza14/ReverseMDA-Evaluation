@@ -1,0 +1,107 @@
+{
+"PIM":
+{
+  "true_positives": {
+    "count": 13,
+    "items": [
+      ["recruiteruser", "applicationuser", "inheritance"],
+      ["jobposting", "applicationuser", "1", "1", "association"],
+      ["jobapplication", "applicationuser", "1", "1", "association"],
+      ["comment", "applicationuser", "1", "1", "association"],
+      ["like", "applicationuser", "1", "1", "association"],
+      ["post", "applicationuser", "1", "1", "association"],
+      ["post", "like", "1", "*", "association"],
+      ["post", "comment", "1", "*", "association"],
+      ["connection", "applicationuser", "1", "1", "association"],
+      ["conversation", "applicationuser", "1", "1", "association"],
+      ["message", "applicationuser", "1", "1", "association"],
+      ["newsmodel", "source", "1", "1", "association"],
+      ["newsresponse", "newsmodel", "1", "*", "association"]
+    ]
+  },
+  "false_positives": {
+    "count": 13,
+    "items": [
+      ["admin", "identityuser", "inheritance"],
+      ["recruiteruser", "identityuser", "inheritance"],
+      ["jobposting", "jobapplication", "1", "*", "association"],
+      ["jobapplication", "jobposting", "1", "1", "association"],
+      ["comment", "post", "1", "1", "association"],
+      ["like", "post", "1", "1", "association"],
+      ["message", "conversation", "1", "1", "association"],
+      ["conversation", "message", "1", "*", "association"],
+      ["adminpanelviewmodel", "applicationuser", "1", "*", "association"],
+      ["adminpanelviewmodel", "jobposting", "1", "*", "association"],
+      ["adminpanelviewmodel", "post", "1", "*", "association"],
+      ["adminpanelviewmodel", "comment", "1", "*", "association"],
+      ["post", "like", "1", "1", "association"]
+    ]
+  },
+  "false_negatives": {
+    "count": 11,
+    "items": [
+      ["admin", "applicationuser", "1", "*", "aggregation"],
+      ["admin", "jobposting", "1", "*", "aggregation"],
+      ["admin", "post", "1", "*", "aggregation"],
+      ["admin", "comment", "1", "*", "aggregation"],
+      ["jobposting", "jobapplication", "1", "*", "composition"],
+      ["message", "conversation", "1", "1", "aggregation"],
+      ["conversation", "message", "1", "*", "composition"],
+      ["post", "like", "1", "0..*", "composition"],
+      ["post", "comment", "1", "0..*", "composition"],
+      ["message", "applicationuser", "1", "1", "association"],  // (sentBy, receivedBy) not distinguishable
+      ["connection", "applicationuser", "1", "1", "association"] // (accountowner, friend) not distinguishable
+    ]
+  },
+  "precision": 0.5,
+  "recall": 0.54,
+  "f1_score": 0.52
+}
+
+}
+
+{
+"PM":
+{
+  "true_positives": {
+    "count": 3,
+    "items": [
+      ["controller", "viewmodel", "refinement"],
+      ["ilogger", "iserviceprovider", "refinement"],
+      ["iemailsender", "iserviceprovider", "refinement"]
+    ]
+  },
+  "false_positives": {
+    "count": 11,
+    "items": [
+      ["controller", "pagemodel", "refinement"],
+      ["inewsapiservice", "httpclient", "dependency"],
+      ["signinmanager", "identityuser", "dependency"],
+      ["usermanager", "identityuser", "dependency"],
+      ["usermanager", "iuserstore", "dependency"],
+      ["iuseremailstore", "iuserstore", "refinement"],
+      ["rolemanager", "identityrole", "dependency"],
+      ["httpclient", "task", "dependency"],
+      ["blobserviceclient", "blobcontainerclient", "refinement"],
+      ["iazureclientbuilder", "blobclientoptions", "refinement"],
+      ["iazureclientbuilder", "queueclientoptions", "refinement"]
+    ]
+  },
+  "false_negatives": {
+    "count": 7,
+    "items": [
+      ["controller", "appdbcontext", "dependency"],
+      ["controller", "service", "dependency"],
+      ["viewmodel", "model", "refinement"],
+      ["iapiservice", "httpclient", "dependency"],
+      ["controller", "manager", "dependency"],
+      ["manager", "identity", "dependency"],
+      ["azureclientfactorybuilder", "iazureclientbuilder", "refinement"]
+    ]
+  },
+  "precision": 0.21,
+  "recall": 0.3,
+  "f1_score": 0.25
+}
+
+}

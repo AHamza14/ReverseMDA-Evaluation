@@ -1,0 +1,339 @@
+  "PIM Operations": {
+	  		  "per_classifier": {
+			"block": {
+			  "true_positives": {
+				"count": 2,
+				"items": ["hasparent", "calculatehash"]
+			  },
+			  "false_positives": {
+				"count": 0,
+				"items": []
+			  },
+			  "false_negatives": {
+				"count": 0,
+				"items": []
+			  },
+			  "precision": 1.0,
+			  "recall": 1.0,
+			  "f1_score": 1.0
+			},
+			"blockchain": {
+			  "true_positives": {
+				"count": 3,
+				"items": ["trytoadd", "hasblock", "getblock"]
+			  },
+			  "false_positives": {
+				"count": 0,
+				"items": []
+			  },
+			  "false_negatives": {
+				"count": 0,
+				"items": []
+			  },
+			  "precision": 1.0,
+			  "recall": 1.0,
+			  "f1_score": 1.0
+			},
+			"transaction": {
+			  "true_positives": {
+				"count": 1,
+				"items": ["calculatehash"]
+			  },
+			  "false_positives": {
+				"count": 0,
+				"items": []
+			  },
+			  "false_negatives": {
+				"count": 0,
+				"items": []
+			  },
+			  "precision": 1.0,
+			  "recall": 1.0,
+			  "f1_score": 1.0
+			},
+			"accountstate": {
+			  "true_positives": {
+				"count": 2,
+				"items": ["addtobalance", "subtractfrombalance"]
+			  },
+			  "false_positives": {
+				"count": 0,
+				"items": []
+			  },
+			  "false_negatives": {
+				"count": 0,
+				"items": []
+			  },
+			  "precision": 1.0,
+			  "recall": 1.0,
+			  "f1_score": 1.0
+			},
+			"accountsstate": {
+			  "true_positives": {
+				"count": 2,
+				"items": ["put", "get"]
+			  },
+			  "false_positives": {
+				"count": 0,
+				"items": []
+			  },
+			  "false_negatives": {
+				"count": 0,
+				"items": []
+			  },
+			  "precision": 1.0,
+			  "recall": 1.0,
+			  "f1_score": 1.0
+			},
+			"blockhash": {
+			  "true_positives": {
+				"count": 2,
+				"items": ["calculate", "calculatehash"]
+			  },
+			  "false_positives": {
+				"count": 0,
+				"items": []
+			  },
+			  "false_negatives": {
+				"count": 0,
+				"items": []
+			  },
+			  "precision": 1.0,
+			  "recall": 1.0,
+			  "f1_score": 1.0
+			}
+		  },
+		  "micro_average": {
+			"true_positives": 12,
+			"false_positives": 0,
+			"false_negatives": 0,
+			"precision": 1.0,
+			"recall": 1.0,
+			"f1_score": 1.0
+		  }
+		}
+  }
+
+  {
+"PM Operations": 
+{
+  "per_classifier": {
+		"builder": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["build"]
+		  },
+		  "false_positives": {
+			"count": 1,
+			"items": ["setproperty"]
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 0.5,
+		  "recall": 1.0,
+		  "f1_score": 0.67
+		},
+		"encoder": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["encode", "decode"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"store": {
+		  "true_positives": {
+			"count": 4,
+			"items": ["getbyid", "getbyparent", "save", "remove"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"processor": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["process"]
+		  },
+		  "false_positives": {
+			"count": 2,
+			"items": ["tryconnectchildren", "mine"]
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 0.33,
+		  "recall": 1.0,
+		  "f1_score": 0.5
+		},
+		"trie": {
+		  "true_positives": {
+			"count": 5,
+			"items": ["put", "get", "remove", "isempty", "cloneleafs"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"compiler": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["compile"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"machine": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["execute"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"memory": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["getdata", "putdata"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"stack": {
+		  "true_positives": {
+			"count": 4,
+			"items": ["push", "pop", "top", "swap"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"storage": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["put", "get"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"dataword": {
+		  "true_positives": {
+			"count": 5,
+			"items": ["add", "subtract", "multiply", "divide", "negate"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"programenvironment": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["builder"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		}
+	  },
+	  "micro_average": {
+		"true_positives": 25,
+		"false_positives": 3,
+		"false_negatives": 0,
+		"precision": 0.89,
+		"recall": 1.0,
+		"f1_score": 0.94
+	  }
+	}
+
+}
+
+
+

@@ -1,0 +1,173 @@
+@startuml PIM_Model
+' Complete Platform-Independent Model
+
+package "LinkedInClone.Models" {
+    class ApplicationUser {
+        +createddate : DateTime
+        +roleid : string
+        +company : string
+        +fullname : string
+    }
+    class RecruiterUser {
+        +company : string
+        +fullname : string
+    }
+    class AdminUser
+    class JobPosting {
+        +id : int
+        +recruiter : ApplicationUser
+        +recruitid : string
+        +jobtitle : string
+        +description : string
+        +createddate : DateTime
+        +jobapplications : ICollection<JobApplication>
+        +SetRecruiter(recruiter : ApplicationUser) : void
+    }
+    class JobApplication {
+        +jobapplicationid : int
+        +applicant : ApplicationUser
+        +job : JobPosting
+        +filepath : string?
+        +filename : string?
+        +createddate : DateTime
+    }
+    class Post {
+        +id : int
+        +author : ApplicationUser
+        +content : string
+        +posteddate : DateTime
+        +filepath : string?
+        +filename : string?
+        +likes : IList<Like>?
+        +comments : IList<Comment>?
+    }
+    class Comment {
+        +id : int
+        +post : Post
+        +author : ApplicationUser
+        +content : string
+        +createddated : DateTime
+    }
+    class Like {
+        +id : int
+        +likedpost : Post
+        +likedby : ApplicationUser
+        +likeddate : DateTime
+    }
+    class Connection {
+        +id : int
+        +accountowner : ApplicationUser
+        +friend : ApplicationUser
+        +createddate : DateTime
+        +accepted : bool
+    }
+    class Conversation {
+        +id : int
+        +startedby : ApplicationUser
+        +receivedby : ApplicationUser
+        +createddate : DateTime
+        +messages : IList<Message>
+    }
+    class Message {
+        +id : int
+        +sentby : ApplicationUser
+        +receivedby : ApplicationUser
+        +content : string
+        +sentdate : DateTime
+        +conversation : Conversation
+    }
+    class AdminPanelViewModel {
+        +users : List<ApplicationUser>
+        +jobpostings : List<JobPosting>
+        +posts : List<Post>
+        +comments : List<Comment>
+        +AddComment(comment : Comment) : void
+        +AddPost(post : Post) : void
+    }
+    class RecruiterUser
+    class AdminUser
+}
+
+package "LinkedInClone.Models" {
+    class NewsModel {
+        +source : Source
+        +author : string
+        +title : string
+        +description : string
+        +url : string
+        +urltoimage : string
+        +publishedat : string
+        +content : string
+    }
+    class Source {
+        +id : string
+        +name : string
+    }
+    class NewsResponse {
+        +status : string
+        +totalresults : int
+        +articles : List<NewsModel>
+    }
+}
+
+package "LinkedInClone.Models.Blobs" {
+    class BlobContent {
+        +filepath : string
+        +filename : string
+    }
+    class BlobObject {
+        +content : Stream?
+        +contenttype : string?
+    }
+}
+
+package "LinkedInClone" {
+    class Quote {
+        +o : decimal
+        +h : decimal
+        +l : decimal
+        +c : decimal
+        +pc : decimal
+        +t : long
+    }
+    class InputModel {
+        +email : string
+        +password : string
+        +rememberme : bool
+        +fullname : string
+        +confirmpassword : string
+        +company : string
+    }
+}
+
+' Relationships
+RecruiterUser --|> ApplicationUser
+AdminUser --|> IdentityUser
+RecruiterUser --|> IdentityUser
+JobPosting "1" --> "1" ApplicationUser
+JobPosting "1" --> "*" JobApplication
+JobApplication "1" --> "1" ApplicationUser
+JobApplication "1" --> "1" JobPosting
+Comment "1" --> "1" Post
+Comment "1" --> "1" ApplicationUser
+Like "1" --> "1" Post
+Like "1" --> "1" ApplicationUser
+Post "1" --> "1" ApplicationUser
+Post "1" --> "*" Like
+Post "1" --> "*" Comment
+Connection "1" --> "1" ApplicationUser
+Conversation "1" --> "1" ApplicationUser
+Conversation "1" --> "*" Message
+Message "1" --> "1" ApplicationUser
+Message "1" --> "1" Conversation
+NewsModel "1" --> "1" Source
+NewsResponse "1" --> "*" NewsModel
+AdminPanelViewModel "1" --> "*" ApplicationUser
+AdminPanelViewModel "1" --> "*" JobPosting
+AdminPanelViewModel "1" --> "*" Post
+AdminPanelViewModel "1" --> "*" Comment
+
+' BlobObject attributes for string and Stream (association to enum replaced by attribute)
+' No enums involved so no special enum attribute handling needed here
+
+@enduml

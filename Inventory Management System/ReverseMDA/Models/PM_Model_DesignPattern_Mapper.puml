@@ -1,0 +1,15 @@
+@startuml PM_Model_DesignPattern_Mapper
+' PM: Design Pattern Mapper Model
+
+package "Design Pattern: Mapper" {
+  class Map {
+    +Override(mapping)
+  }
+  class MappingOverride {
+    +Override(mapping)
+  }
+}
+
+Map --|> MappingOverride : refinement
+
+@enduml

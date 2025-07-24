@@ -1,0 +1,99 @@
+{"PIM Relationships":
+	{
+	  "true_positives": {
+		"count": 15,
+		"items": [
+		  ["blockhash", "hash", "inheritance"],
+		  ["statusmessage", "message", "inheritance"],
+		  ["transactionmessage", "message", "inheritance"],
+		  ["blockmessage", "message", "inheritance"],
+		  ["block", "transaction", "1", "*", "association"],
+		  ["blockinfo", "block", "1", "1", "association"],
+		  ["blockinfo", "accountsstate", "1", "1", "association"],
+		  ["blockchain", "block", "1", "1", "association"],
+		  ["accountsstate", "trie", "1", "1", "association"],
+		  ["transaction", "hash", "1", "1", "association"],
+		  ["status", "blockhash", "1", "1", "association"],
+		  ["blockmessage", "block", "1", "1", "association"],
+		  ["statusmessage", "status", "1", "1", "association"],
+		  ["transactionmessage", "transaction", "1", "1", "association"],
+		  ["blockheader", "hash", "1", "1", "composition"]
+		]
+	  },
+	  "false_positives": {
+		"count": 10,
+		"items": [
+		  ["block", "blockheader", "1", "1", "association"],
+		  ["block", "blockhash", "1", "2", "association"],
+		  ["block", "accountsstate", "1", "1", "association"],
+		  ["blockchain", "blockhash", "1", "*", "association"],
+		  ["accountsstate", "accountstate", "1", "*", "association"],
+		  ["accountstate", "hash", "1", "*", "association"],
+		  ["transaction", "address", "1", "2", "association"],
+		  ["transaction", "biginteger", "1", "1", "association"],
+		  ["transactionpool", "transaction", "1", "*", "aggregation"],
+		  ["blockheader", "blockhash", "1", "2", "association"]
+		]
+	  },
+	  "false_negatives": {
+		"count": 11,
+		"items": [
+		  ["accountsstate", "accountstateencoder", "1", "1", "association"],
+		  ["accountsstate", "accountstate", "1", "1", "association"],
+		  ["block", "transaction", "1", "*", "aggregation"],
+		  ["block", "blockheader", "1", "1", "composition"],
+		  ["block", "transactionencoder", "1", "1", "association"],
+		  ["block", "blockhash", "1", "1", "association"],
+		  ["block", "blockhash", "1", "1", "association"],
+		  ["blockheader", "blockhash", "1", "1", "association"],
+		  ["blockheader", "blockhash", "1", "1", "association"],
+		  ["transaction", "address", "1", "1", "association"],
+		  ["transaction", "address", "1", "1", "association"]
+		]
+	  },
+	  "precision": 0.6,
+	  "recall": 0.58,
+	  "f1_score": 0.59
+	}
+}
+
+{"PM Relationships":
+{
+  "true_positives": {
+    "count": 10,
+    "items": [
+      ["builder", "programenvironment", "refinement"],
+      ["store", "trie", "dependency"],
+      ["compiler", "machine", "dependency"],
+      ["machine", "memory", "dependency"],
+      ["machine", "stack", "dependency"],
+      ["machine", "storage", "dependency"],
+      ["machine", "programenvironment", "dependency"],
+      ["memory", "dataword", "dependency"],
+      ["stack", "dataword", "dependency"],
+      ["storage", "dataword", "dependency"]
+    ]
+  },
+  "false_positives": {
+    "count": 4,
+    "items": [
+      ["encoder", "decoder", "compatibility"],
+      ["encoder", "decoder", "dependency"],
+      ["store", "trie", "compatibility"],
+      ["stack", "dataword", "compatibility"]
+    ]
+  },
+  "false_negatives": {
+    "count": 3,
+    "items": [
+      ["processor", "store", "dependency"],
+      ["processor", "store", "comptability"],
+      ["encoder", "trie", "dependency"]
+    ]
+  },
+  "precision": 0.71,
+  "recall": 0.77,
+  "f1_score": 0.74
+}
+
+}

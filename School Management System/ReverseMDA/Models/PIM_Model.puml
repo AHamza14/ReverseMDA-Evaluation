@@ -1,0 +1,22 @@
+@startuml PIM_Model
+
+package "SchoolManagement.Core.Entities" {
+  class Course {
+    +title : string
+    +credit : int
+  }
+
+  class Student {
+    +number : string
+    +firstname : string
+    +lastname : string
+    +courses : List<Course>
+
+    +AddCourse(course : Course) : void
+    +RemoveCourse(course : Course) : void
+  }
+}
+
+Student "1" --> "*" Course
+
+@enduml

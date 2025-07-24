@@ -1,0 +1,13 @@
+@startuml PM_Model_Technology_ASPNETCoreWebAPI
+' PM: Technology ASP.NET Core Web API Model
+package "WebApi.Controllers" {
+  class Controller {
+    +service
+
+    +Handle*Action()
+  }
+  class ActionResult
+}
+
+Controller ..|> ActionResult
+@enduml

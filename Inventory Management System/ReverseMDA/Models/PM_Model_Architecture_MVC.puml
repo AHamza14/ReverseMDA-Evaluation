@@ -1,0 +1,47 @@
+@startuml PM_Model_Architecture_MVC
+' PM: Architecture MVC Model
+
+package "MVC" {
+  class Controller {
+    +Service : Service
+    +Create(entity : T) : void
+    +Read(id : Guid) : T
+    +Update(entity : T) : void
+    +Delete(id : Guid) : void
+  }
+  class Service {
+    +Repository : Repository
+    +Create(entity : T) : void
+    +Read(id : Guid) : T
+    +Update(entity : T) : void
+    +Delete(id : Guid) : void
+  }
+  class Repository {
+    +session : Session
+    +Create(entity : T) : void
+    +Read(id : Guid) : T
+    +ReadAll() : List<T>
+    +Delete(id : Guid) : void
+  }
+  class UnitOfWork {
+    +current : UnitOfWork
+    +session : Session
+    +sessionFactory : SessionFactory
+    +transaction : Transaction
+    +BeginTransaction() : void
+    +Commit() : void
+    +Rollback() : void
+  }
+  class Model {
+  }
+}
+
+Controller ..> Service : dependency
+Service ..> Repository : dependency
+Repository ..> UnitOfWork : dependency
+
+Model ..|> Controller : compatibility
+Model ..|> Service : compatibility
+Repository ..|> UnitOfWork : compatibility
+
+@enduml

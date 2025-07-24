@@ -1,0 +1,43 @@
+@startuml PM_Model_Technology_Entity_Framework_Core
+' PM: Technology Entity Framework Core Model
+
+package "Entity Framework Core" {
+    class DbContext {
+        +options
+        +appusers
+        +recruiters
+        +messages
+        +comments
+        +posts
+        +likes
+        +connections
+        +conversations
+        +jobpostings
+        +jobapplications
+        +OnModelCreating()
+        +OnConfiguring()
+    }
+    class DbSet {
+        +entities
+    }
+    class ModelBuilder
+    class DbContextOptions
+    class Migration {
+        +Up()
+        +Down()
+    }
+    class ModelSnapshot {
+        +BuildModel()
+    }
+    class MigrationBuilder
+}
+
+' Relationships
+DbContext ..> DbSet
+DbContext ..> ModelBuilder
+DbContext ..> DbContextOptions
+Migration ..> MigrationBuilder
+Migration ..> ModelBuilder
+ModelSnapshot ..> ModelBuilder
+
+@enduml

@@ -1,0 +1,39 @@
+@startuml PM_Model_Technology_ASP_NET_Core_Identity
+' PM: Technology ASP.NET Core Identity Model
+
+package "ASP.NET Core Identity" {
+    class IdentityUser {
+        +id
+        +userName
+        +email
+        +passwordHash
+    }
+    class IdentityRole {
+        +id
+        +name
+    }
+    class SignInManager {
+        +userManager
+    }
+    class UserManager {
+        +userStore
+    }
+    class IUserStore {
+        +users
+    }
+    class IUserEmailStore {
+        +emails
+    }
+    class RoleManager {
+        +roles
+    }
+}
+
+' Relationships
+SignInManager ..> IdentityUser
+UserManager ..> IdentityUser
+UserManager ..> IUserStore
+IUserEmailStore --|> IUserStore
+RoleManager ..> IdentityRole
+
+@enduml

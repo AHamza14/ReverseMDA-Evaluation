@@ -1,0 +1,150 @@
+@startuml PIM_Model
+' Complete Platform-Independent Model
+
+package "Galaxy.Base.Domain" {
+  abstract class BaseClass {
+    +id : Guid
+    +code : int
+  }
+  class CalculationFactor {
+    +calculatedprice : decimal
+    +factor : Factor
+    +CalculateFactor(Price : decimal) : decimal
+  }
+  class Company {
+    +companyid : int
+    +companyname : string
+    +industry : string
+    +faxnumber : int
+    +website : string
+  }
+  class Document {
+    +createdate : DateTime
+    +party : Party
+    +productdocumentslist : List<T>
+    +Add(TproductDoc : T) : void
+  }
+  class Factor {
+    +name : string
+    +priority : int
+    +increasing : bool
+    +operation : Operation
+    +quantity : decimal
+  }
+  class Measurement {
+    +name : string
+  }
+  class Party {
+    +registrationnumber : int
+    +registrationdate : DateTime
+    +address : string
+    +phonenumber : int
+    +emailaddress : string
+    +posiontion : Position
+  }
+  class Person {
+    +nationalidentitynumber : int
+    +firstname : string
+    +lastname : string
+  }
+  enum Position {
+    None
+    Customer
+    Supplier
+    Employee
+  }
+  class Product {
+    +name : string
+    +measurement : Measurement
+    +subsidiarymeasurement : SubsidiaryMeasurement
+  }
+  class ProductDocument {
+    +orginalprice : int
+    +piece : int
+    +profit : int
+    +price : decimal
+    +product : Product
+    +calculationfactorslist : List<CalculationFactor>
+    +document : T
+    +CalculatePrice() : decimal
+  }
+  class SubsidiaryMeasurement {
+    +subsidiaryunitname : string
+    +coefficient : decimal
+    +measurement : Measurement
+  }
+  enum Operation {
+    Percentage
+    Amount
+    Unit
+  }
+}
+
+package "Inventory.Domain" {
+  class InventoryDocument {
+    +epxdate : DateTime
+    +datein : DateTime
+    +dateout : DateTime
+  }
+  class InventoryProductDocument {
+  }
+}
+
+package "Purchase" {
+  class PurchaseDocument {
+    +purchasedate : DateTime
+  }
+  class PurchaseProductDocument {
+  }
+}
+
+package "Sale" {
+  class SaleDocument {
+    +saledate : DateTime
+    +customer : Party
+  }
+  class SaleProductDocument {
+  }
+}
+
+' Inheritance
+CalculationFactor --|> BaseClass
+Company --|> Party
+Document --|> BaseClass
+Factor --|> BaseClass
+Measurement --|> BaseClass
+Party --|> BaseClass
+Person --|> Party
+Product --|> BaseClass
+ProductDocument --|> BaseClass
+SubsidiaryMeasurement --|> BaseClass
+InventoryDocument --|> Document
+InventoryProductDocument --|> ProductDocument
+PurchaseDocument --|> Document
+PurchaseProductDocument --|> ProductDocument
+SaleDocument --|> Document
+SaleProductDocument --|> ProductDocument
+
+' Associations (excluding Enums already modeled as attributes)
+BaseClass --> Guid : 1..1
+Company --> Party : 1..1
+Document --> DateTime : 1..1
+Document --> Party : 1..1
+Document --> ProductDocument : 1..*
+Party --> DateTime : 1..1
+Product --> Measurement : 1..1
+Product --> SubsidiaryMeasurement : 1..1
+ProductDocument --> Product : 1..1
+ProductDocument --> CalculationFactor : 1..*
+ProductDocument --> T : 1..1
+SubsidiaryMeasurement --> Measurement : 1..1
+InventoryDocument --> InventoryProductDocument : 1..*
+InventoryProductDocument --> InventoryDocument : 1..1
+PurchaseDocument --> PurchaseProductDocument : 1..*
+PurchaseProductDocument --> PurchaseDocument : 1..1
+SaleDocument --> SaleProductDocument : 1..*
+SaleDocument --> Party : 1..1
+SaleProductDocument --> SaleDocument : 1..1
+}
+
+@enduml

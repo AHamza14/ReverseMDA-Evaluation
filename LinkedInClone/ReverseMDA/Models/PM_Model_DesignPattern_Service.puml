@@ -1,0 +1,22 @@
+@startuml PM_Model_DesignPattern_Service
+' PM: Design Pattern Service Model
+
+package "Service Pattern" {
+    interface INewsAPIService {
+        +client
+        +GetHeadlines()
+    }
+    interface IBlobService {
+        +blobServiceClient
+        +blobContainerClient
+        +ImageExtensions
+        +VideoExtensions
+        +DocExtensions
+        +GetBlobAsync()
+        +UploadFileBlobAsync()
+        +DeleteBlob()
+    }
+}
+
+INewsAPIService ..> HttpClient
+@enduml

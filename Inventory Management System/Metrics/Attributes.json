@@ -1,0 +1,557 @@
+{
+"PIM":
+{
+  "per_classifier": {
+    "calculationfactor": {
+      "true_positives": {
+        "count": 2,
+        "items": ["calculatedprice", "factor"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "company": {
+      "true_positives": {
+        "count": 4,
+        "items": ["companyname", "industry", "faxnumber", "website"]
+      },
+      "false_positives": {
+        "count": 1,
+        "items": ["companyid"]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1_score": 0.89
+    },
+    "document": {
+      "true_positives": {
+        "count": 3,
+        "items": ["createdate", "party", "productdocumentslist"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "factor": {
+      "true_positives": {
+        "count": 5,
+        "items": ["name", "priority", "increasing", "operation", "quantity"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "operation": {
+      "true_positives": {
+        "count": 3,
+        "items": ["percentage", "amount", "unit"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "measurement": {
+      "true_positives": {
+        "count": 1,
+        "items": ["name"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "party": {
+      "true_positives": {
+        "count": 6,
+        "items": [
+          "registrationnumber",
+          "registrationdate",
+          "address",
+          "phonenumber",
+          "emailaddress",
+          "posiontion"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "position": {
+      "true_positives": {
+        "count": 4,
+        "items": ["none", "customer", "supplier", "employee"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "person": {
+      "true_positives": {
+        "count": 3,
+        "items": ["nationalidentitynumber", "firstname", "lastname"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "product": {
+      "true_positives": {
+        "count": 3,
+        "items": ["name", "measurement", "subsidiarymeasurement"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "productdocument": {
+      "true_positives": {
+        "count": 6,
+        "items": [
+          "orginalprice",
+          "piece",
+          "profit",
+          "price",
+          "product",
+          "calculationfactorslist"
+        ]
+      },
+      "false_positives": {
+        "count": 1,
+        "items": ["document"]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.86,
+      "recall": 1.0,
+      "f1_score": 0.92
+    },
+    "subsidiarymeasurement": {
+      "true_positives": {
+        "count": 3,
+        "items": ["subsidiaryunitname", "coefficient", "measurement"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "inventorydocument": {
+      "true_positives": {
+        "count": 3,
+        "items": ["epxdate", "datein", "dateout"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "inventoryproductdocument": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "purchasedocument": {
+      "true_positives": {
+        "count": 1,
+        "items": ["purchasedate"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "purchaseproductdocument": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "saledocument": {
+      "true_positives": {
+        "count": 2,
+        "items": ["saledate", "customer"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "saleproductdocument": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    }
+  },
+  "micro_average": {
+    "true_positives": 49,
+    "false_positives": 2,
+    "false_negatives": 0,
+    "precision": 0.96,
+    "recall": 1.0,
+    "f1_score": 0.98
+  }
+}
+
+}
+
+{
+"PM":
+{
+  "per_classifier": {
+    "controller": {
+      "true_positives": {
+        "count": 1,
+        "items": ["service"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "service": {
+      "true_positives": {
+        "count": 1,
+        "items": ["repository"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "repository": {
+      "true_positives": {
+        "count": 1,
+        "items": ["session"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "unitofwork": {
+      "true_positives": {
+        "count": 2,
+        "items": ["session", "sessionfactory"]
+      },
+      "false_positives": {
+        "count": 2,
+        "items": ["current", "transaction"]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.67
+    },
+    "map": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "sessionfactory": {
+      "true_positives": {
+        "count": 1,
+        "items": ["sessionfactory"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "session": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "transaction": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "convention": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "interceptor": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "dependencyinjection": {
+      "true_positives": {
+        "count": 1,
+        "items": ["container"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "container": {
+      "true_positives": {
+        "count": 1,
+        "items": ["windsorcontainer"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  },
+  "micro_average": {
+    "true_positives": 8,
+    "false_positives": 2,
+    "false_negatives": 0,
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1_score": 0.89
+  }
+}
+
+}

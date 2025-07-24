@@ -1,0 +1,23 @@
+@startuml PM_Model_DesignPattern_Encoder_Decoder_Serialization
+' PM: Design Pattern Encoder/Decoder (Serialization) Model
+
+package "Encoder/Decoder" {
+    class Encoder {
+        +instance
+        +hashEncoder
+        +bigIntegerEncoder
+        +addressEncoder
+        +Encode()
+        +Decode()
+    }
+    class Decoder {
+        +instance
+        +Encode()
+        +Decode()
+    }
+}
+
+Encoder ..|> Decoder   ' Compatibility
+Encoder ..> Decoder    ' Dependency
+
+@enduml

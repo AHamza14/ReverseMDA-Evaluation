@@ -1,0 +1,108 @@
+{
+"PIM":
+{
+  "true_positives": {
+    "count": 16,
+    "items": [
+      "applicationuser",
+      "recruiteruser",
+      "admin",
+      "jobposting",
+      "jobapplication",
+      "post",
+      "comment",
+      "like",
+      "connection",
+      "conversation",
+      "message",
+      "newsmodel",
+      "source",
+      "newsresponse",
+      "blobcontent",
+      "blobobject"
+    ]
+  },
+  "false_positives": {
+    "count": 4,
+    "items": [
+      "adminpanelviewmodel",
+      "quote",
+      "inputmodel",
+      "identityuser"
+    ]
+  },
+  "false_negatives": {
+    "count": 1,
+    "items": [
+      "account"
+    ]
+  },
+  "precision": 0.8,
+  "recall": 0.94,
+  "f1_score": 0.87
+}
+
+}
+
+{
+"PM":
+{
+  "true_positives": {
+    "count": 10,
+    "items": [
+      "controller",
+      "viewmodel",
+      "factory",
+      "ilogger",
+      "iemailsender",
+      "iserviceprovider",
+      "iactionresult",
+      "httpclient",
+      "authenticationscheme",
+      "azureclientfactorybuilder",
+      "iazureclientbuilder"
+    ]
+  },
+  "false_positives": {
+    "count": 16,
+    "items": [
+      "pagemodel",
+      "inewsapiservice",
+      "iblobservice",
+      "identityuser",
+      "identityrole",
+      "signinmanager",
+      "usermanager",
+      "iuserstore",
+      "iuseremailstore",
+      "rolemanager",
+      "task",
+      "blobserviceclient",
+      "blobcontainerclient",
+      "blobclientoptions",
+      "queueserviceclient",
+      "queueclientoptions"
+    ]
+  },
+  "false_negatives": {
+    "count": 13,
+    "items": [
+      "appdbcontext",
+      "model",
+      "seeddata",
+      "service",
+      "identity",
+      "iapiservice",
+      "dbset",
+      "migration",
+      "dbcontextoptions",
+      "manager",
+      "store"
+    ]
+  },
+  "precision": 0.38,
+  "recall": 0.43,
+  "f1_score": 0.4
+}
+
+}

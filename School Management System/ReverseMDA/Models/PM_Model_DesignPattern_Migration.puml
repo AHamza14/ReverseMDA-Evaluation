@@ -1,0 +1,14 @@
+@startuml PM_Model_DesignPattern_Migration
+' PM: Design Pattern Migration Model
+class Migration {
+    +Up()
+    +Down()
+    +BuildTargetModel()
+}
+class ModelSnapshot {
+    +BuildModel()
+}
+
+ModelSnapshot --|> Migration
+Migration --|> DbContext
+@enduml

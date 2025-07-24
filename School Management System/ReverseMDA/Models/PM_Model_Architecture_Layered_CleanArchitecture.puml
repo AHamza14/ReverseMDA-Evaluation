@@ -1,0 +1,75 @@
+@startuml PM_Model_Architecture_Layered_CleanArchitecture
+' PM: Architecture Layered / Clean Architecture Model
+package "Domain" {
+  abstract class AggregateRoot
+  abstract class Entity {
+    +id
+  }
+  class ValueObject {
+    +properties
+    +fields
+
+    +Equals(obj : ValueObject) : bool
+    +Equals(obj : object) : bool
+    +GetHashCode() : int
+  }
+}
+
+package "Domain.Specifications" {
+  class Specification {
+    +criteria
+    +includes
+    +includestrings
+    +orderby
+    +orderbydescending
+    +groupby
+    +take
+    +skip
+    +ispagingenabled
+
+    +AddInclude(includeExpression)
+    +ApplyPaging(skip, take)
+    +ApplyOrderBy(orderByExpression)
+    +ApplyOrderByDescending(orderByDescendingExpression)
+    +ApplyGroupBy(groupByExpression)
+  }
+}
+
+package "Infrastructure" {
+  class DbContext {
+    +entities
+
+    +CreateDbContext()
+  }
+  class Repository {
+    +context
+
+    +GetByIdAsync(id)
+    +ListAllAsync()
+    +AddAsync(entity)
+    +UpdateAsync(entity)
+    +DeleteAsync(entity)
+    +ListAsync(spec)
+    +CountAsync(spec)
+  }
+  class Service {
+    +repository
+
+    +GetStudents()
+    +GetStudent(id)
+    +AddStudent(student)
+    +UpdateStudent(student)
+    +DeleteStudent(student)
+    +AddCourse(studentId, course)
+  }
+}
+
+' Relationships
+DbContext ..> Entity
+Repository ..> Entity
+Repository ..> DbContext
+Service ..> Repository
+Repository ..> Specification
+Specification ..> Entity
+AggregateRoot --|> Entity
+@enduml

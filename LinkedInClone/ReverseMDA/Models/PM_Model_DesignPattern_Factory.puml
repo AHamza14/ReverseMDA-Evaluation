@@ -1,0 +1,10 @@
+@startuml PM_Model_DesignPattern_Factory
+' PM: Design Pattern Factory Model
+
+package "Factory Pattern" {
+    class Factory {
+        +AddServiceClient()
+    }
+}
+
+@enduml

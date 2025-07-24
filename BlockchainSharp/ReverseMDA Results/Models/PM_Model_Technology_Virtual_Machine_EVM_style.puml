@@ -1,0 +1,74 @@
+@startuml PM_Model_Technology_Virtual_Machine_EVM_style
+' PM: Technology Virtual Machine (EVM-style) Model
+
+package "EVM-style VM" {
+    class Compiler {
+        +compiler
+        +lines
+        +Compile()
+    }
+
+    class Machine {
+        +stack
+        +memory
+        +programEnvironment
+        +Execute()
+    }
+
+    class Memory {
+        +blocksize
+        +blocks
+        +GetData()
+        +PutData()
+    }
+
+    class Stack {
+        +stack
+        +size
+        +Push()
+        +Pop()
+        +Top()
+        +Swap()
+    }
+
+    class Storage {
+        +state
+        +Put()
+        +Get()
+    }
+
+    class DataWord {
+        +value
+        +bytes
+        +Add()
+        +Subtract()
+        +Multiply()
+        +Divide()
+        +Negate()
+    }
+
+    class ProgramEnvironment {
+        +address
+        +origin
+        +caller
+        +coinbase
+        +Builder()
+    }
+
+    class Bytecode {
+        +bytes
+        +ToBytes()
+    }
+}
+
+Compiler ..> Machine : dependency
+Machine ..> Memory : dependency
+Machine ..> Stack : dependency
+Machine ..> Storage : dependency
+Machine ..> ProgramEnvironment : dependency
+Memory ..> DataWord : dependency
+Stack ..> DataWord : dependency
+Storage ..> DataWord : dependency
+Stack ..|> DataWord : compatibility
+
+@enduml

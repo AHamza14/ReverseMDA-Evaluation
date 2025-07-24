@@ -1,0 +1,49 @@
+@startuml PM_Model_Technology_FluentNHibernate
+' PM: Technology Fluent NHibernate Model
+
+package "Fluent NHibernate" {
+  class MappingOverride {
+    +Override(mapping)
+  }
+  class AutomappingConfiguration {
+    +ShouldMap(type : Type) : bool
+  }
+  class SessionFactory {
+    +sessionfactory : SessionFactory
+    +CreateSessionFactory() : void
+  }
+  class Session {
+    +OpenSession() : void
+  }
+  class Transaction {
+  }
+  class Convention {
+    +GetKeyName(property, type) : string
+    +Apply(instance) : void
+  }
+  class Interceptor {
+    +Intercept(invocation) : void
+  }
+  class DependencyInjection {
+    +container : Container
+    +Install()
+  }
+  class Installer {
+  }
+  class Container {
+    +windsorContainer : WindsorContainer
+  }
+}
+
+MappingOverride ..> AutomappingConfiguration : dependency
+AutomappingConfiguration ..> SessionFactory : dependency
+SessionFactory ..> Session : dependency
+Session ..> Transaction : dependency
+Convention ..> MappingOverride : dependency
+Interceptor ..> SessionFactory : dependency
+Installer ..> Container : dependency
+DependencyInjection ..> Installer : dependency
+
+MappingOverride ..|> Convention : compatibility
+
+@enduml

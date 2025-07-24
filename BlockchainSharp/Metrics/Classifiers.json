@@ -1,0 +1,82 @@
+{"PIM Classifier":
+	{
+	  "true_positives": {
+		"count": 18,
+		"items": [
+		  "address",
+		  "hash",
+		  "blockhash",
+		  "accountstate",
+		  "accountsstate",
+		  "block",
+		  "blockchain",
+		  "blockheader",
+		  "blockinfo",
+		  "status",
+		  "transaction",
+		  "message",
+		  "blockmessage",
+		  "statusmessage",
+		  "transactionmessage",
+		  "blockprocess - enum",
+		  "transactionprocess - enum",
+		  "messagetype - enum"
+		]
+	  },
+	  "false_positives": {
+		"count": 1,
+		"items": [
+		  "transactionpool"
+		]
+	  },
+	  "false_negatives": {
+		"count": 1,
+		"items": [
+		  "blockexecutor"
+		]
+	  },
+	  "precision": 0.95,
+	  "recall": 0.95,
+	  "f1_score": 0.95
+	}
+}
+
+{"PM Classifier":
+	{
+	  "true_positives": {
+		"count": 13,
+		"items": [
+		  "builder",
+		  "encoder",
+		  "store",
+		  "trie",
+		  "processor",
+		  "compiler",
+		  "machine",
+		  "memory",
+		  "stack",
+		  "storage",
+		  "dataword",
+		  "programenvironment",
+		  "bytecode - enum"
+		]
+	  },
+	  "false_positives": {
+		"count": 2,
+		"items": [
+		  "decoder",
+		  "messagetype - enum"
+		]
+	  },
+	  "false_negatives": {
+		"count": 0,
+		"items": []
+	  },
+	  "precision": 0.87,
+	  "recall": 1.0,
+	  "f1_score": 0.93
+	}
+}
+
+
+

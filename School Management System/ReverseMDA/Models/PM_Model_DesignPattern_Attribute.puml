@@ -1,0 +1,6 @@
+@startuml PM_Model_DesignPattern_Attribute
+' PM: Design Pattern Attribute Model
+class Attribute
+
+Attribute ..|> Entity
+@enduml

@@ -1,0 +1,85 @@
+{
+"PIM":
+{
+  "true_positives": {
+    "count": 18,
+    "items": [
+      "calculationfactor",
+      "company",
+      "document",
+      "factor",
+      "operation - enum",
+      "measurement",
+      "party",
+      "position - enum",
+      "person",
+      "product",
+      "productdocument",
+      "subsidiarymeasurement",
+      "inventorydocument",
+      "inventoryproductdocument",
+      "purchasedocument",
+      "purchaseproductdocument",
+      "saledocument",
+      "saleproductdocument"
+    ]
+  },
+  "false_positives": {
+    "count": 1,
+    "items": [
+      "baseclass"
+    ]
+  },
+  "false_negatives": {
+    "count": 0,
+    "items": []
+  },
+  "precision": 0.95,
+  "recall": 1.0,
+  "f1_score": 0.97
+}
+
+
+}
+
+{
+"PM":
+{
+  "true_positives": {
+    "count": 13,
+    "items": [
+      "unitofwork",
+      "controller",
+      "convention",
+      "repository",
+      "map",
+      "service",
+      "sessionfactory",
+      "session",
+      "interceptor",
+      "installer",
+      "dependencyinjection",
+      "container",
+      "transaction"
+    ]
+  },
+  "false_positives": {
+    "count": 3,
+    "items": [
+      "model",
+      "mappingoverride",
+      "automappingconfiguration"
+    ]
+  },
+  "false_negatives": {
+    "count": 1,
+    "items": [
+      "fluentnhibernatehelper"
+    ]
+  },
+  "precision": 0.81,
+  "recall": 0.93,
+  "f1_score": 0.87
+}
+
+}

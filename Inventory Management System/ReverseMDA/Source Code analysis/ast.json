@@ -1,0 +1,3355 @@
+[
+  {
+    "name": "DependencyInstaller",
+    "type": "class",
+    "namespace": "DependencyInjection",
+    "bases": [
+      "IWindsorInstaller"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Install",
+        "void",
+        [
+          [
+            "container",
+            "IWindsorContainer"
+          ],
+          [
+            "store",
+            "IConfigurationStore"
+          ]
+        ]
+      ],
+      [
+        "CreateSessionFactory",
+        "ISessionFactory",
+        []
+      ],
+      [
+        "Kernel_ComponentRegistered",
+        "void",
+        [
+          [
+            "key",
+            "string"
+          ],
+          [
+            "handler",
+            "Castle.MicroKernel.IHandler"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "DependencyInjection",
+    "bases": [],
+    "attributes": [
+      [
+        "_windsorContainer",
+        "WindsorContainer"
+      ]
+    ],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "WindsorContainer",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "UnitOfWorkHelper",
+    "type": "class",
+    "namespace": "DependencyInjection",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "IsRepositoryMethod",
+        "bool",
+        [
+          [
+            "methodInfo",
+            "MethodInfo"
+          ]
+        ]
+      ],
+      [
+        "IsRepositoryClass",
+        "bool",
+        [
+          [
+            "type",
+            "Type"
+          ]
+        ]
+      ],
+      [
+        "HasUnitOfWorkAttribute",
+        "bool",
+        [
+          [
+            "methodInfo",
+            "MethodInfo"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "UnitOfWorkInterceptor",
+    "type": "class",
+    "namespace": "DependencyInjection",
+    "bases": [
+      "IInterceptor"
+    ],
+    "attributes": [
+      [
+        "_sessionFactory",
+        "ISessionFactory"
+      ]
+    ],
+    "operations": [
+      [
+        "Intercept",
+        "void",
+        [
+          [
+            "invocation",
+            "IInvocation"
+          ]
+        ]
+      ],
+      [
+        "RequiresDbConnection",
+        "bool",
+        [
+          [
+            "methodInfo",
+            "MethodInfo"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "CompanyController",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [
+      "Controller<Company>",
+      "ICompanyController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Controller",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [
+      "IController<T>"
+    ],
+    "attributes": [
+      [
+        "Service",
+        "IService<T>"
+      ]
+    ],
+    "operations": [
+      [
+        "Create",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Read",
+        "T",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ],
+      [
+        "Update",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "void",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "IService<T>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "DocumentCotroller",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [
+      "Controller<Document>",
+      "IDocumentController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "FactorController",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [
+      "Controller<Factor>",
+      "IFactorController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "MeasurementController",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [
+      "Controller<Measurement>",
+      "IMeasurementController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PartyController",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [
+      "Controller<Party>",
+      "IPartyController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PersonController",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [
+      "Controller<Person>",
+      "IPersonController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ProductController",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [
+      "Controller<Product>",
+      "IProductController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Galaxy.Base.Controller",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "UnitOfWorkAttribute",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data",
+    "bases": [
+      "Attribute"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "CustomForeignKeyConvention",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Convertions",
+    "bases": [
+      "ForeignKeyConvention"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "GetKeyName",
+        "string",
+        [
+          [
+            "property",
+            "FluentNHibernate.Member"
+          ],
+          [
+            "type",
+            "Type"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "CustomIdConvention",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Convertions",
+    "bases": [
+      "IIdConvention"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Apply",
+        "void",
+        [
+          [
+            "instance",
+            "IIdentityInstance"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "CompanyRepository",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "Repository<Company>",
+      "ICompanyRepository",
+      "IRepository<Company>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "DocumentRepository",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "Repository<Document>",
+      "IDocumentRepository",
+      "IRepository<Document>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "FactorRepository",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "Repository<Factor>",
+      "IFactorRepository"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "MeasurementRepository",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "Repository<Measurement>",
+      "IMeasurementRepository",
+      "IRepository<Measurement>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PartyRepository",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "Repository<Party>",
+      "IPartyRepository",
+      "IRepository<Party>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PersonRepository",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "Repository<Person>",
+      "IPersonRepository",
+      "IRepository<Person>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ProductRepository",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "Repository<Product>",
+      "IProductRepository",
+      "IRepository<Product>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Repository",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "IRepository<T>"
+    ],
+    "attributes": [
+      [
+        "session",
+        "ISession",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "Create",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "ReadAll",
+        "List<T>",
+        []
+      ],
+      [
+        "Read",
+        "T",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "void",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "ISession",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "StoreConfiguration",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "DefaultAutomappingConfiguration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "ShouldMap",
+        "bool",
+        [
+          [
+            "type",
+            "Type"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "UnitOfWork",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.DAL",
+    "bases": [
+      "IUnitOfWork"
+    ],
+    "attributes": [
+      [
+        "current",
+        "UnitOfWork",
+        "property"
+      ],
+      [
+        "_current",
+        "UnitOfWork"
+      ],
+      [
+        "session",
+        "ISession",
+        "property"
+      ],
+      [
+        "_sessionFactory",
+        "ISessionFactory"
+      ],
+      [
+        "_transaction",
+        "ITransaction"
+      ]
+    ],
+    "operations": [
+      [
+        "BeginTransaction",
+        "void",
+        []
+      ],
+      [
+        "Commit",
+        "void",
+        []
+      ],
+      [
+        "Rollback",
+        "void",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "UnitOfWork",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UnitOfWork",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ISession",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ITransaction",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "CalculationFactorMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<CalculationFactor>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<CalculationFactor>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "CompanyMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<Company>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<Company>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "DocumentMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<Document>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<Document>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "GenericDocumentMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<Document<ProductDocument>>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<Document<ProductDocument>>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "FactorMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<Factor>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<Factor>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "StoreConfiguration",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "DefaultAutomappingConfiguration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "ShouldMap",
+        "bool",
+        [
+          [
+            "type",
+            "Type"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "FluentNHibernateHelper",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [],
+    "attributes": [
+      [
+        "_sessionFactory",
+        "ISessionFactory"
+      ],
+      [
+        "sessionfactory",
+        "ISessionFactory",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "CreatSessionFactory",
+        "ISessionFactory",
+        []
+      ],
+      [
+        "OpenSesseion",
+        "ISession",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "MeasurementMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<Measurement>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<Measurement>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "PartyMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<Party>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<Party>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "PersonMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<Person>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<Person>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "ProductDocumentMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<ProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<ProductDocument>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "GenericProductDocumentMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<ProductDocument<Document>>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<ProductDocument<Document>>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "ProductMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<Product>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<Product>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SubsidiaryUnitMap",
+    "type": "class",
+    "namespace": "Galaxy.Base.Data.Mapping",
+    "bases": [
+      "IAutoMappingOverride<SubsidiaryMeasurement>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "AutoMapping<SubsidiaryMeasurement>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "BaseClass",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "Guid",
+        "property"
+      ],
+      [
+        "code",
+        "int",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "Guid",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "CalculationFactor",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "BaseClass"
+    ],
+    "attributes": [
+      [
+        "calculatedprice",
+        "decimal",
+        "property"
+      ],
+      [
+        "factor",
+        "Factor",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "CalculateFactor",
+        "decimal",
+        [
+          [
+            "Price",
+            "decimal"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "Factor",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Company",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "Party"
+    ],
+    "attributes": [
+      [
+        "companyid",
+        "int",
+        "property"
+      ],
+      [
+        "companyname",
+        "string",
+        "property"
+      ],
+      [
+        "industry",
+        "string",
+        "property"
+      ],
+      [
+        "faxnumber",
+        "int",
+        "property"
+      ],
+      [
+        "website",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Document",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "BaseClass"
+    ],
+    "attributes": [
+      [
+        "createdate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "party",
+        "Party",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "Party",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Document",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "Document"
+    ],
+    "attributes": [
+      [
+        "productdocumentslist",
+        "List<T>",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "Add",
+        "void",
+        [
+          [
+            "TproductDoc",
+            "T"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "T",
+        "association",
+        "1",
+        "*"
+      ]
+    ]
+  },
+  {
+    "name": "Operation",
+    "type": "enum",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [],
+    "attributes": [
+      [
+        "Percentage",
+        "default"
+      ],
+      [
+        "Amount",
+        "default"
+      ],
+      [
+        "Unit",
+        "default"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Factor",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "BaseClass"
+    ],
+    "attributes": [
+      [
+        "name",
+        "string",
+        "property"
+      ],
+      [
+        "priority",
+        "int",
+        "property"
+      ],
+      [
+        "increasing",
+        "bool",
+        "property"
+      ],
+      [
+        "operation",
+        "Operation",
+        "property"
+      ],
+      [
+        "quantity",
+        "decimal",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "Operation",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Measurement",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "BaseClass"
+    ],
+    "attributes": [
+      [
+        "name",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Position",
+    "type": "enum",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [],
+    "attributes": [
+      [
+        "None",
+        "0x0"
+      ],
+      [
+        "Customer",
+        "0x1"
+      ],
+      [
+        "Supplier",
+        "0x2"
+      ],
+      [
+        "Employee",
+        "0x4"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Party",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "BaseClass"
+    ],
+    "attributes": [
+      [
+        "registrationnumber",
+        "int",
+        "property"
+      ],
+      [
+        "registrationdate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "address",
+        "string",
+        "property"
+      ],
+      [
+        "phonenumber",
+        "int",
+        "property"
+      ],
+      [
+        "emailaddress",
+        "string",
+        "property"
+      ],
+      [
+        "posiontion",
+        "Position",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "Position",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Person",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "Party"
+    ],
+    "attributes": [
+      [
+        "nationalidentitynumber",
+        "int",
+        "property"
+      ],
+      [
+        "firstname",
+        "string",
+        "property"
+      ],
+      [
+        "lastname",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Product",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "BaseClass"
+    ],
+    "attributes": [
+      [
+        "name",
+        "string",
+        "property"
+      ],
+      [
+        "measurement",
+        "Measurement",
+        "property"
+      ],
+      [
+        "subsidiarymeasurement",
+        "SubsidiaryMeasurement",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "Measurement",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "SubsidiaryMeasurement",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "ProductDocument",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "BaseClass"
+    ],
+    "attributes": [
+      [
+        "orginalprice",
+        "int",
+        "property"
+      ],
+      [
+        "piece",
+        "int",
+        "property"
+      ],
+      [
+        "profit",
+        "int",
+        "property"
+      ],
+      [
+        "price",
+        "decimal",
+        "property"
+      ],
+      [
+        "product",
+        "Product",
+        "property"
+      ],
+      [
+        "calculationfactorslist",
+        "List<CalculationFactor>",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "CalculatePrice",
+        "decimal",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "Product",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "CalculationFactor",
+        "association",
+        "1",
+        "*"
+      ]
+    ]
+  },
+  {
+    "name": "ProductDocument",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "ProductDocument"
+    ],
+    "attributes": [
+      [
+        "document",
+        "T",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "T",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SubsidiaryMeasurement",
+    "type": "class",
+    "namespace": "Galaxy.Base.Domain",
+    "bases": [
+      "BaseClass"
+    ],
+    "attributes": [
+      [
+        "subsidiaryunitname",
+        "string",
+        "property"
+      ],
+      [
+        "coefficient",
+        "decimal",
+        "property"
+      ],
+      [
+        "measurement",
+        "Measurement",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "Measurement",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "ICompanyController",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ControllerInterfaces",
+    "bases": [
+      "IController<Company>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IController",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ControllerInterfaces",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Create",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Read",
+        "T",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ],
+      [
+        "Update",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "void",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "IDocumentController",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ControllerInterfaces",
+    "bases": [
+      "IController<Document>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IFactorController",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ControllerInterfaces",
+    "bases": [
+      "IController<Factor>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IMeasurementController",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ControllerInterfaces",
+    "bases": [
+      "IController<Measurement>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPartyController",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ControllerInterfaces",
+    "bases": [
+      "IController<Party>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPersonController",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ControllerInterfaces",
+    "bases": [
+      "IController<Person>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IProductController",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ControllerInterfaces",
+    "bases": [
+      "IController<Product>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ICompanyRepository",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [
+      "IRepository<Company>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IDocumentRepository",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [
+      "IRepository<Document>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IFactorRepository",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [
+      "IRepository<Factor>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IMeasurementRepository",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [
+      "IRepository<Measurement>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPartyRepository",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [
+      "IRepository<Party>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPersonRepository",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [
+      "IRepository<Person>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IProductRepository",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [
+      "IRepository<Product>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IRepository",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Create",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "ReadAll",
+        "List<T>",
+        []
+      ],
+      [
+        "Read",
+        "T",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "void",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "IUnitOfWork",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.DAL",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "BeginTransaction",
+        "void",
+        []
+      ],
+      [
+        "Commit",
+        "void",
+        []
+      ],
+      [
+        "Rollback",
+        "void",
+        []
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "ICompanyService",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ServiceInterfaces",
+    "bases": [
+      "IService<Company>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IDocumentService",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ServiceInterface",
+    "bases": [
+      "IService<Document>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IFactorService",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ServiceInterface",
+    "bases": [
+      "IService<Factor>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IMeasurementService",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ServiceInterfaces",
+    "bases": [
+      "IService<Measurement>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPartyService",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ServiceInterface",
+    "bases": [
+      "IService<Party>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPersonService",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ServiceInterface",
+    "bases": [
+      "IService<Person>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IProductService",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ServiceInterfaces",
+    "bases": [
+      "IService<Product>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IService",
+    "type": "interface",
+    "namespace": "Galaxy.Base.Domain.ServiceInterfaces",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Create",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Read",
+        "T",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ],
+      [
+        "Update",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "void",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "CompanyService",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [
+      "Service<Company>",
+      "ICompanyService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "DocumentService",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [
+      "Service<Document>",
+      "IDocumentService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "FactorService",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [
+      "Service<Factor>",
+      "IFactorService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "MeasurementService",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [
+      "Service<Measurement>",
+      "IMeasurementService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PartyService",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [
+      "Service<Party>",
+      "IPartyService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PersonService",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [
+      "Service<Person>",
+      "IPersonService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ProductService",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [
+      "Service<Product>",
+      "IProductService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "Service",
+    "type": "class",
+    "namespace": "Galaxy.Base.Service",
+    "bases": [
+      "IService<T>"
+    ],
+    "attributes": [
+      [
+        "Repository",
+        "IRepository<T>"
+      ]
+    ],
+    "operations": [
+      [
+        "Create",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Read",
+        "T",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ],
+      [
+        "Update",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "void",
+        [
+          [
+            "id",
+            "Guid"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "IRepository<T>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "DependencyUnitTest",
+    "type": "class",
+    "namespace": "Galaxy.Base.UnitTest",
+    "bases": [],
+    "attributes": [
+      [
+        "windsorContainer",
+        "WindsorContainer"
+      ]
+    ],
+    "operations": [
+      [
+        "TestDependency",
+        "void",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "WindsorContainer",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "InventoryDocumentController",
+    "type": "class",
+    "namespace": "Inventory.Controller",
+    "bases": [
+      "Controller<InventoryDocument>",
+      "IInventoryDocumentController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "InventoryProductDocumentController",
+    "type": "class",
+    "namespace": "Inventory.Controller",
+    "bases": [
+      "Controller<InventoryProductDocument>",
+      "IInventoryProductDocumentController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Inventory.Controller",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "InventoryDocumentMap",
+    "type": "class",
+    "namespace": "Inventory.Data",
+    "bases": [
+      "IAutoMappingOverride<InventoryDocument>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "FluentNHibernate.Automapping.AutoMapping<InventoryDocument>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "InventoryConfiguration",
+    "type": "class",
+    "namespace": "Inventory.Data",
+    "bases": [
+      "DefaultAutomappingConfiguration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "ShouldMap",
+        "bool",
+        [
+          [
+            "type",
+            "Type"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "InventoryFluentNhibernateHelper",
+    "type": "class",
+    "namespace": "Inventory.Data",
+    "bases": [],
+    "attributes": [
+      [
+        "_sessionFactory",
+        "ISessionFactory"
+      ],
+      [
+        "sessionfactory",
+        "ISessionFactory",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "CreatSessionFactory",
+        "ISessionFactory",
+        []
+      ],
+      [
+        "OpenSesseion",
+        "ISession",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "InventoryProductDocumentMap",
+    "type": "class",
+    "namespace": "Inventory.Data",
+    "bases": [
+      "IAutoMappingOverride<InventoryProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "FluentNHibernate.Automapping.AutoMapping<InventoryProductDocument>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Inventory.Data",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "InventoryDocumentRepository",
+    "type": "class",
+    "namespace": "Inventory.Data.DAL",
+    "bases": [
+      "Repository<InventoryDocument>",
+      "IInventorytDocumentRepository"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "InventoryProductDocumentRepository",
+    "type": "class",
+    "namespace": "Inventory.Data.DAL",
+    "bases": [
+      "Repository<InventoryProductDocument>",
+      "IInventoryProductDocumentRepository"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "InventoryUnitOfWorkRepository",
+    "type": "class",
+    "namespace": "Inventory.Data.DAL",
+    "bases": [
+      "UnitOfWork"
+    ],
+    "attributes": [
+      [
+        "inventorydocumentrepository",
+        "IInventorytDocumentRepository",
+        "property"
+      ],
+      [
+        "inventoryproductdocumentrepository",
+        "IInventoryProductDocumentRepository",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "IInventorytDocumentRepository",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IInventoryProductDocumentRepository",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "InventoryDocument",
+    "type": "class",
+    "namespace": "Inventory.Domain",
+    "bases": [
+      "Document<InventoryProductDocument>"
+    ],
+    "attributes": [
+      [
+        "epxdate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "datein",
+        "DateTime",
+        "property"
+      ],
+      [
+        "dateout",
+        "DateTime",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "InventoryProductDocument",
+    "type": "class",
+    "namespace": "Inventory.Domain",
+    "bases": [
+      "ProductDocument<InventoryDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Inventory.Domain",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "IInventoryDocumentController",
+    "type": "interface",
+    "namespace": "Inventory.Domain.ControllerInterface",
+    "bases": [
+      "IController<InventoryDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IInventoryProductDocumentController",
+    "type": "interface",
+    "namespace": "Inventory.Domain.ControllerInterface",
+    "bases": [
+      "IController<InventoryProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IInventoryProductDocumentRepository",
+    "type": "interface",
+    "namespace": "Inventory.Domain.DAL",
+    "bases": [
+      "IRepository<InventoryProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IInventorytDocumentRepository",
+    "type": "interface",
+    "namespace": "Inventory.Domain.DAL",
+    "bases": [
+      "IRepository<InventoryDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IInventoryUnitOfWork",
+    "type": "interface",
+    "namespace": "Inventory.Domain.DAL",
+    "bases": [
+      "IUnitOfWork"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IInventoryDocumentService",
+    "type": "interface",
+    "namespace": "Inventory.Domain.ServiceInterface",
+    "bases": [
+      "IService<InventoryDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IInventoryProductDocumentService",
+    "type": "interface",
+    "namespace": "Inventory.Domain.ServiceInterface",
+    "bases": [
+      "IService<InventoryProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "InventoryDocumentService",
+    "type": "class",
+    "namespace": "InventoryService",
+    "bases": [
+      "Service<InventoryDocument>",
+      "IInventoryDocumentService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "InventoryProductDocumentService",
+    "type": "class",
+    "namespace": "InventoryService",
+    "bases": [
+      "Service<InventoryProductDocument>",
+      "IInventoryProductDocumentService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Inventory.Service",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Purchase.Controller",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "PurchaseDocumentController",
+    "type": "class",
+    "namespace": "Purchase.Controller",
+    "bases": [
+      "Controller<PurchaseDocument>",
+      "IPurchaseDocumentController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PurchaseProductDocumentController",
+    "type": "class",
+    "namespace": "Purchase.Controller",
+    "bases": [
+      "Controller<PurchaseProductDocument>",
+      "IPurcahseProductDocumentController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Purchase.Data",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "PurchaseDocumentMap",
+    "type": "class",
+    "namespace": "Purchase.Data",
+    "bases": [
+      "IAutoMappingOverride<PurchaseDocument>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "FluentNHibernate.Automapping.AutoMapping<PurchaseDocument>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "StoreConfiguration",
+    "type": "class",
+    "namespace": "Purchase.Data",
+    "bases": [
+      "DefaultAutomappingConfiguration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "ShouldMap",
+        "bool",
+        [
+          [
+            "type",
+            "Type"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "PurchaseFluentNHibernateHelper",
+    "type": "class",
+    "namespace": "Purchase.Data",
+    "bases": [],
+    "attributes": [
+      [
+        "_sessionFactory",
+        "ISessionFactory"
+      ],
+      [
+        "sessionfactory",
+        "ISessionFactory",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "CreatSessionFactory",
+        "ISessionFactory",
+        []
+      ],
+      [
+        "OpenSesseion",
+        "ISession",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "PurchaseProductDocumentMap",
+    "type": "class",
+    "namespace": "Purchase",
+    "bases": [
+      "IAutoMappingOverride<PurchaseProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "FluentNHibernate.Automapping.AutoMapping<PurchaseProductDocument>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "PurcahseUnitOfWork",
+    "type": "class",
+    "namespace": "Purchase.Data.DAL",
+    "bases": [
+      "UnitOfWork",
+      "IPurchaseUnitOfWork"
+    ],
+    "attributes": [
+      [
+        "purchaseproductdocumentrepository",
+        "IPurchaseProductDocumentRepository",
+        "property"
+      ],
+      [
+        "purchasedocumentrepository",
+        "IPurchaseDocumentRepository",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "IPurchaseProductDocumentRepository",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IPurchaseDocumentRepository",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "PurchaseDocumentRepository",
+    "type": "class",
+    "namespace": "Purchase.Data.DAL",
+    "bases": [
+      "Repository<PurchaseDocument>",
+      "IPurchaseDocumentRepository"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PurchaseProductDocumentRepository",
+    "type": "class",
+    "namespace": "Purchase.Data.DAL",
+    "bases": [
+      "Repository<PurchaseProductDocument>",
+      "IPurchaseProductDocumentRepository"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Purchase.Domain",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "PurchaseDocument",
+    "type": "class",
+    "namespace": "Purchase",
+    "bases": [
+      "Document<PurchaseProductDocument>"
+    ],
+    "attributes": [
+      [
+        "purchasedate",
+        "DateTime",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "PurchaseProductDocument",
+    "type": "class",
+    "namespace": "Purchase",
+    "bases": [
+      "ProductDocument<PurchaseDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPurcahseProductDocumentController",
+    "type": "interface",
+    "namespace": "Purchase.Domain.ControllerInterface",
+    "bases": [
+      "IController<PurchaseProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPurchaseDocumentController",
+    "type": "interface",
+    "namespace": "Purchase.Domain.ControllerInterface",
+    "bases": [
+      "IController<PurchaseDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPurchaseDocumentRepository",
+    "type": "interface",
+    "namespace": "Purchase.Domain.DAL",
+    "bases": [
+      "IRepository<PurchaseDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPurchaseProductDocumentRepository",
+    "type": "interface",
+    "namespace": "Purchase.Domain.DAL",
+    "bases": [
+      "IRepository<PurchaseProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPurchaseUnitOfWork",
+    "type": "interface",
+    "namespace": "Purchase.Domain.DAL",
+    "bases": [
+      "IUnitOfWork"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPurchaseDocumentService",
+    "type": "interface",
+    "namespace": "Purchase.Domain.ServiceInterface",
+    "bases": [
+      "IService<PurchaseDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IPurchaseProductDocumentService",
+    "type": "interface",
+    "namespace": "Purchase.Domain.ServiceInterface",
+    "bases": [
+      "IService<PurchaseProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Purchase.Service",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "PurchaseDocumentService",
+    "type": "class",
+    "namespace": "Purchase.Service",
+    "bases": [
+      "Service<PurchaseDocument>",
+      "IPurchaseDocumentService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "PurchaseProductDocumentService",
+    "type": "class",
+    "namespace": "Purchase.Service",
+    "bases": [
+      "Service<PurchaseProductDocument>",
+      "IPurchaseProductDocumentService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Sale.Controller",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SaleDocuementController",
+    "type": "class",
+    "namespace": "Sale.Controller",
+    "bases": [
+      "Controller<SaleDocument>",
+      "ISaleDocumentController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "SaleProductDocumentController",
+    "type": "class",
+    "namespace": "Sale.Controller",
+    "bases": [
+      "Controller<SaleProductDocument>",
+      "ISaleProductDocumentController"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "StoreConfiguration",
+    "type": "class",
+    "namespace": "Sale.Data",
+    "bases": [
+      "DefaultAutomappingConfiguration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "ShouldMap",
+        "bool",
+        [
+          [
+            "type",
+            "Type"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "FluentNHibernateHelper",
+    "type": "class",
+    "namespace": "Sale.Data",
+    "bases": [],
+    "attributes": [
+      [
+        "_sessionFactory",
+        "ISessionFactory"
+      ],
+      [
+        "sessionfactory",
+        "ISessionFactory",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "CreatSessionFactory",
+        "ISessionFactory",
+        []
+      ],
+      [
+        "OpenSesseion",
+        "ISession",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ISessionFactory",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Sale.Data",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SaleDocumentMap",
+    "type": "class",
+    "namespace": "Sale",
+    "bases": [
+      "IAutoMappingOverride<SaleDocument>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "FluentNHibernate.Automapping.AutoMapping<SaleDocument>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SaleProductDocumentMap",
+    "type": "class",
+    "namespace": "Sale.Data",
+    "bases": [
+      "IAutoMappingOverride<SaleProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Override",
+        "void",
+        [
+          [
+            "mapping",
+            "FluentNHibernate.Automapping.AutoMapping<SaleProductDocument>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SaleDocumentRepository",
+    "type": "class",
+    "namespace": "Sale.Data.DAL",
+    "bases": [
+      "Repository<SaleDocument>",
+      "ISaleDocumentRepository"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "SaleProductDocumentRepository",
+    "type": "class",
+    "namespace": "Sale.Data.DAL",
+    "bases": [
+      "Repository<SaleProductDocument>",
+      "ISaleProductDucumentRepository"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Sale.Domain",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SaleDocument",
+    "type": "class",
+    "namespace": "Sale",
+    "bases": [
+      "Document<SaleProductDocument>"
+    ],
+    "attributes": [
+      [
+        "saledate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "customer",
+        "Party"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "Party",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "SaleProductDocument",
+    "type": "class",
+    "namespace": "Sale",
+    "bases": [
+      "ProductDocument<SaleDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ISaleDocumentController",
+    "type": "interface",
+    "namespace": "Sale.Domain.ControllerInterface",
+    "bases": [
+      "IController<SaleDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ISaleProductDocumentController",
+    "type": "interface",
+    "namespace": "Sale.Domain.ControllerInterface",
+    "bases": [
+      "IController<SaleProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ISaleDocumentRepository",
+    "type": "interface",
+    "namespace": "Sale.Domain.DAL",
+    "bases": [
+      "IRepository<SaleDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ISaleProductDucumentRepository",
+    "type": "interface",
+    "namespace": "Sale.Domain.DAL",
+    "bases": [
+      "IRepository<SaleProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ISaleUnitOfWorkRepository",
+    "type": "interface",
+    "namespace": "Sale.Domain.DAL",
+    "bases": [
+      "IUnitOfWork",
+      "IDisposable"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ISaleDocumentService",
+    "type": "interface",
+    "namespace": "Sale.Domain.ServiceInterface",
+    "bases": [
+      "IService<SaleDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ISaleProductDocumentService",
+    "type": "interface",
+    "namespace": "Sale.Domain.ServiceInterface",
+    "bases": [
+      "IService<SaleProductDocument>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "Sale.Service",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SaleDocumentService",
+    "type": "class",
+    "namespace": "Sale.Service",
+    "bases": [
+      "Service<SaleDocument>",
+      "ISaleDocumentService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "SaleProductDocumentServicecs",
+    "type": "class",
+    "namespace": "Sale.Service",
+    "bases": [
+      "Service<SaleProductDocument>",
+      "ISaleProductDocumentService"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  }
+]

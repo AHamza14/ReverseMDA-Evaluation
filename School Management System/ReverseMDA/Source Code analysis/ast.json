@@ -1,0 +1,1547 @@
+[
+  {
+    "name": "Course",
+    "type": "class",
+    "namespace": "SchoolManagement.Core.Entities",
+    "bases": [
+      "BaseEntity",
+      "IAggregateRoot"
+    ],
+    "attributes": [
+      [
+        "title",
+        "string",
+        "property"
+      ],
+      [
+        "credit",
+        "int",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Student",
+    "type": "class",
+    "namespace": "SchoolManagement.Core.Entities",
+    "bases": [
+      "BaseEntity",
+      "IAggregateRoot"
+    ],
+    "attributes": [
+      [
+        "number",
+        "string",
+        "property"
+      ],
+      [
+        "firstname",
+        "string",
+        "property"
+      ],
+      [
+        "lastname",
+        "string",
+        "property"
+      ],
+      [
+        "courses",
+        "List<Course>",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "AddCourse",
+        "void",
+        [
+          [
+            "course",
+            "Course"
+          ]
+        ]
+      ],
+      [
+        "RemoveCourse",
+        "void",
+        [
+          [
+            "course",
+            "Course"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "Course",
+        "association",
+        "1",
+        "*"
+      ]
+    ]
+  },
+  {
+    "name": "IStudentRepository",
+    "type": "interface",
+    "namespace": "SchoolManagement.Core.Interafces",
+    "bases": [
+      "IAsyncRepository<Student>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "GetByIdWithCoursesAsync",
+        "Task<Student>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "IStudentService",
+    "type": "interface",
+    "namespace": "SchoolManagement.Core.Interafces",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "GetStudents",
+        "Task<IReadOnlyList<Student>>",
+        []
+      ],
+      [
+        "GetStudent",
+        "Task<Student>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "AddStudent",
+        "Task",
+        [
+          [
+            "student",
+            "Student"
+          ]
+        ]
+      ],
+      [
+        "UpdateStudent",
+        "Task",
+        [
+          [
+            "student",
+            "Student"
+          ]
+        ]
+      ],
+      [
+        "DeleteStudent",
+        "Task",
+        [
+          [
+            "student",
+            "Student"
+          ]
+        ]
+      ],
+      [
+        "AddCourse",
+        "Task",
+        [
+          [
+            "studentId",
+            "int"
+          ],
+          [
+            "course",
+            "Course"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "StudentService",
+    "type": "class",
+    "namespace": "SchoolManagement.Core.Services",
+    "bases": [
+      "IStudentService"
+    ],
+    "attributes": [
+      [
+        "_studentRepository",
+        "IStudentRepository"
+      ],
+      [
+        "_courseRepository",
+        "IAsyncRepository<Course>"
+      ]
+    ],
+    "operations": [
+      [
+        "GetStudent",
+        "Task<Student>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "GetStudents",
+        "Task<IReadOnlyList<Student>>",
+        []
+      ],
+      [
+        "UpdateStudent",
+        "Task",
+        [
+          [
+            "student",
+            "Student"
+          ]
+        ]
+      ],
+      [
+        "AddStudent",
+        "Task",
+        [
+          [
+            "student",
+            "Student"
+          ]
+        ]
+      ],
+      [
+        "DeleteStudent",
+        "Task",
+        [
+          [
+            "student",
+            "Student"
+          ]
+        ]
+      ],
+      [
+        "AddCourse",
+        "Task",
+        [
+          [
+            "studentId",
+            "int"
+          ],
+          [
+            "course",
+            "Course"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "IStudentRepository",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IAsyncRepository<Course>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "BaseSpecification",
+    "type": "class",
+    "namespace": "SchoolManagement.Core.Specifications",
+    "bases": [
+      "ISpecification<T>"
+    ],
+    "attributes": [
+      [
+        "criteria",
+        "Expression<Func<T, bool>>",
+        "property"
+      ],
+      [
+        "includes",
+        "List<Expression<Func<T, object>>>",
+        "property"
+      ],
+      [
+        "includestrings",
+        "List<string>",
+        "property"
+      ],
+      [
+        "orderby",
+        "Expression<Func<T, object>>",
+        "property"
+      ],
+      [
+        "orderbydescending",
+        "Expression<Func<T, object>>",
+        "property"
+      ],
+      [
+        "groupby",
+        "Expression<Func<T, object>>",
+        "property"
+      ],
+      [
+        "take",
+        "int",
+        "property"
+      ],
+      [
+        "skip",
+        "int",
+        "property"
+      ],
+      [
+        "ispagingenabled",
+        "bool",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "AddInclude",
+        "void",
+        [
+          [
+            "includeExpression",
+            "Expression<Func<T, object>>"
+          ]
+        ]
+      ],
+      [
+        "AddInclude",
+        "void",
+        [
+          [
+            "includeString",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "ApplyPaging",
+        "void",
+        [
+          [
+            "skip",
+            "int"
+          ],
+          [
+            "take",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "ApplyOrderBy",
+        "void",
+        [
+          [
+            "orderByExpression",
+            "Expression<Func<T, object>>"
+          ]
+        ]
+      ],
+      [
+        "ApplyOrderByDescending",
+        "void",
+        [
+          [
+            "orderByDescendingExpression",
+            "Expression<Func<T, object>>"
+          ]
+        ]
+      ],
+      [
+        "ApplyGroupBy",
+        "void",
+        [
+          [
+            "groupByExpression",
+            "Expression<Func<T, object>>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "Expression<Func<T, bool>>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "Expression<Func<T, object",
+        "association",
+        "1",
+        "*"
+      ],
+      [
+        "Expression<Func<T, object>>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "Expression<Func<T, object>>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "Expression<Func<T, object>>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "CourseByTitle",
+    "type": "class",
+    "namespace": "SchoolManagement.Core.Specifications",
+    "bases": [
+      "BaseSpecification<Course>"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "StudentManagementContext",
+    "type": "class",
+    "namespace": "SchoolManagement.Infrastructure",
+    "bases": [
+      "DbContext"
+    ],
+    "attributes": [
+      [
+        "students",
+        "DbSet<Student>",
+        "property"
+      ],
+      [
+        "courses",
+        "DbSet<Course>",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "DbSet<Student>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<Course>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "StudentManagementContextFactory",
+    "type": "class",
+    "namespace": "SchoolManagement.Infrastructure",
+    "bases": [
+      "IDesignTimeDbContextFactory<StudentManagementContext>"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "CreateDbContext",
+        "StudentManagementContext",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "SpecificationEvaluator",
+    "type": "class",
+    "namespace": "SchoolManagement.Infrastructure",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "GetQuery",
+        "IQueryable<T>",
+        [
+          [
+            "inputQuery",
+            "IQueryable<T>"
+          ],
+          [
+            "specification",
+            "ISpecification<T>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "StudentManagementDB",
+    "type": "class",
+    "namespace": "SchoolManagement.Infrastructure.Migrations",
+    "bases": [
+      "Migration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Up",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ],
+      [
+        "Down",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "StudentManagementDB",
+    "type": "class",
+    "namespace": "SchoolManagement.Infrastructure.Migrations",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildTargetModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "StudentManagementContextModelSnapshot",
+    "type": "class",
+    "namespace": "SchoolManagement.Infrastructure.Migrations",
+    "bases": [
+      "ModelSnapshot"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "EfRepository",
+    "type": "class",
+    "namespace": "SchoolManagement.Infrastructure.Repositories",
+    "bases": [
+      "IAsyncRepository<T>"
+    ],
+    "attributes": [
+      [
+        "_StudentManagementContext",
+        "StudentManagementContext"
+      ]
+    ],
+    "operations": [
+      [
+        "GetByIdAsync",
+        "Task<T>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "ListAllAsync",
+        "Task<IReadOnlyList<T>>",
+        []
+      ],
+      [
+        "AddAsync",
+        "Task<T>",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "UpdateAsync",
+        "Task",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "DeleteAsync",
+        "Task",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "ApplySpecification",
+        "IQueryable<T>",
+        [
+          [
+            "spec",
+            "ISpecification<T>"
+          ]
+        ]
+      ],
+      [
+        "ListAsync",
+        "Task<IReadOnlyList<T>>",
+        [
+          [
+            "spec",
+            "ISpecification<T>"
+          ]
+        ]
+      ],
+      [
+        "CountAsync",
+        "Task<int>",
+        [
+          [
+            "spec",
+            "ISpecification<T>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "StudentManagementContext",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "StudentRepository",
+    "type": "class",
+    "namespace": "SchoolManagement.Infrastructure.Repositories",
+    "bases": [
+      "EfRepository<Student>",
+      "IStudentRepository"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "GetByIdWithCoursesAsync",
+        "Task<Student>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "BaseEntity",
+    "type": "class",
+    "namespace": "SchoolManagement.SharedKernel",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "int",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IgnoreMemberAttribute",
+    "type": "class",
+    "namespace": "SchoolManagement.SharedKernel",
+    "bases": [
+      "Attribute"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ValueObject",
+    "type": "class",
+    "namespace": "SchoolManagement.SharedKernel",
+    "bases": [
+      "IEquatable<ValueObject>"
+    ],
+    "attributes": [
+      [
+        "properties",
+        "List<PropertyInfo>"
+      ],
+      [
+        "fields",
+        "List<FieldInfo>"
+      ]
+    ],
+    "operations": [
+      [
+        "Equals",
+        "bool",
+        [
+          [
+            "obj",
+            "ValueObject"
+          ]
+        ]
+      ],
+      [
+        "Equals",
+        "bool",
+        [
+          [
+            "obj",
+            "object"
+          ]
+        ]
+      ],
+      [
+        "PropertiesAreEqual",
+        "bool",
+        [
+          [
+            "obj",
+            "object"
+          ],
+          [
+            "p",
+            "PropertyInfo"
+          ]
+        ]
+      ],
+      [
+        "FieldsAreEqual",
+        "bool",
+        [
+          [
+            "obj",
+            "object"
+          ],
+          [
+            "f",
+            "FieldInfo"
+          ]
+        ]
+      ],
+      [
+        "GetProperties",
+        "IEnumerable<PropertyInfo>",
+        []
+      ],
+      [
+        "GetFields",
+        "IEnumerable<FieldInfo>",
+        []
+      ],
+      [
+        "GetHashCode",
+        "int",
+        []
+      ],
+      [
+        "HashValue",
+        "int",
+        [
+          [
+            "seed",
+            "int"
+          ],
+          [
+            "value",
+            "object"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "PropertyInfo",
+        "association",
+        "1",
+        "*"
+      ],
+      [
+        "FieldInfo",
+        "association",
+        "1",
+        "*"
+      ]
+    ]
+  },
+  {
+    "name": "IAggregateRoot",
+    "type": "interface",
+    "namespace": "SchoolManagement.SharedKernel.Interfaces",
+    "bases": [],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IAsyncRepository",
+    "type": "interface",
+    "namespace": "SchoolManagement.SharedKernel.Interfaces",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "GetByIdAsync",
+        "Task<T>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "ListAllAsync",
+        "Task<IReadOnlyList<T>>",
+        []
+      ],
+      [
+        "ListAsync",
+        "Task<IReadOnlyList<T>>",
+        [
+          [
+            "spec",
+            "ISpecification<T>"
+          ]
+        ]
+      ],
+      [
+        "AddAsync",
+        "Task<T>",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "UpdateAsync",
+        "Task",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "DeleteAsync",
+        "Task",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "CountAsync",
+        "Task<int>",
+        [
+          [
+            "spec",
+            "ISpecification<T>"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "IRepository",
+    "type": "interface",
+    "namespace": "SchoolManagement.SharedKernel.Interfaces",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "GetById",
+        "T",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "List",
+        "List<T>",
+        []
+      ],
+      [
+        "Add",
+        "T",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Update",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "void",
+        [
+          [
+            "entity",
+            "T"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "ISpecification",
+    "type": "interface",
+    "namespace": "SchoolManagement.SharedKernel.Interfaces",
+    "bases": [],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "SchoolManagement.WebApi",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ],
+      [
+        "CreateHostBuilder",
+        "IHostBuilder",
+        [
+          [
+            "args",
+            "string[]"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "Startup",
+    "type": "class",
+    "namespace": "SchoolManagement.WebApi",
+    "bases": [],
+    "attributes": [
+      [
+        "configuration",
+        "IConfiguration",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "ConfigureServices",
+        "void",
+        [
+          [
+            "services",
+            "IServiceCollection"
+          ]
+        ]
+      ],
+      [
+        "Configure",
+        "void",
+        [
+          [
+            "app",
+            "IApplicationBuilder"
+          ],
+          [
+            "env",
+            "IWebHostEnvironment"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "IConfiguration",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "StudentsController",
+    "type": "class",
+    "namespace": "SchoolManagement.WebApi.Controllers",
+    "bases": [
+      "ControllerBase"
+    ],
+    "attributes": [
+      [
+        "_studentService",
+        "IStudentService"
+      ]
+    ],
+    "operations": [
+      [
+        "GetStudents",
+        "Task<IReadOnlyList<Student>>",
+        []
+      ],
+      [
+        "GetStudent",
+        "Task<ActionResult<Student>>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "PutStudent",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ],
+          [
+            "student",
+            "Student"
+          ]
+        ]
+      ],
+      [
+        "PostStudent",
+        "Task<ActionResult<Student>>",
+        [
+          [
+            "student",
+            "Student"
+          ]
+        ]
+      ],
+      [
+        "DeleteStudent",
+        "Task<ActionResult<Student>>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "IStudentService",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Program",
+    "type": "class",
+    "namespace": "SchoolManagement.WindowsApp",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Main",
+        "void",
+        []
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "CourseForm",
+    "type": "class",
+    "namespace": "SchoolManagement.WindowsApp.Forms",
+    "bases": [
+      "Form"
+    ],
+    "attributes": [
+      [
+        "_studentService",
+        "IStudentService"
+      ],
+      [
+        "_studentId",
+        "int"
+      ]
+    ],
+    "operations": [
+      [
+        "btnSubmit_Click",
+        "void",
+        [
+          [
+            "sender",
+            "object"
+          ],
+          [
+            "e",
+            "EventArgs"
+          ]
+        ]
+      ],
+      [
+        "button1_Click",
+        "void",
+        [
+          [
+            "sender",
+            "object"
+          ],
+          [
+            "e",
+            "EventArgs"
+          ]
+        ]
+      ],
+      [
+        "RefreshDataGridViewAsync",
+        "Task",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "IStudentService",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "CourseForm",
+    "type": "class",
+    "namespace": "SchoolManagement.WindowsApp.Forms",
+    "bases": [],
+    "attributes": [
+      [
+        "components",
+        "System.ComponentModel.IContainer"
+      ],
+      [
+        "dgvCourse",
+        "System.Windows.Forms.DataGridView"
+      ],
+      [
+        "txbBalance",
+        "System.Windows.Forms.TextBox"
+      ],
+      [
+        "txbNumber",
+        "System.Windows.Forms.TextBox"
+      ],
+      [
+        "lblBalance",
+        "System.Windows.Forms.Label"
+      ],
+      [
+        "lblNumber",
+        "System.Windows.Forms.Label"
+      ],
+      [
+        "btnSubmit",
+        "System.Windows.Forms.Button"
+      ],
+      [
+        "button1",
+        "System.Windows.Forms.Button"
+      ],
+      [
+        "btnLoadCourses",
+        "System.Windows.Forms.Button"
+      ]
+    ],
+    "operations": [
+      [
+        "Dispose",
+        "void",
+        [
+          [
+            "disposing",
+            "bool"
+          ]
+        ]
+      ],
+      [
+        "InitializeComponent",
+        "void",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "System.ComponentModel.IContainer",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.DataGridView",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.TextBox",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.TextBox",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Label",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Label",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Button",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Button",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Button",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "StudentForm",
+    "type": "class",
+    "namespace": "SchoolManagement.WindowsApp.Forms",
+    "bases": [
+      "Form"
+    ],
+    "attributes": [
+      [
+        "_studentService",
+        "IStudentService"
+      ]
+    ],
+    "operations": [
+      [
+        "RefreshDataGridViewAsync",
+        "Task",
+        []
+      ],
+      [
+        "btnSubmit_Click",
+        "void",
+        [
+          [
+            "sender",
+            "object"
+          ],
+          [
+            "e",
+            "EventArgs"
+          ]
+        ]
+      ],
+      [
+        "btnLaodStudents_Click",
+        "void",
+        [
+          [
+            "sender",
+            "object"
+          ],
+          [
+            "e",
+            "EventArgs"
+          ]
+        ]
+      ],
+      [
+        "btnCourses_Click",
+        "void",
+        [
+          [
+            "sender",
+            "object"
+          ],
+          [
+            "e",
+            "EventArgs"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "IStudentService",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "StudentForm",
+    "type": "class",
+    "namespace": "SchoolManagement.WindowsApp.Forms",
+    "bases": [],
+    "attributes": [
+      [
+        "components",
+        "System.ComponentModel.IContainer"
+      ],
+      [
+        "dgvStudent",
+        "System.Windows.Forms.DataGridView"
+      ],
+      [
+        "btnSubmit",
+        "System.Windows.Forms.Button"
+      ],
+      [
+        "lblNumber",
+        "System.Windows.Forms.Label"
+      ],
+      [
+        "lblLastName",
+        "System.Windows.Forms.Label"
+      ],
+      [
+        "lblFirstName",
+        "System.Windows.Forms.Label"
+      ],
+      [
+        "txbNumber",
+        "System.Windows.Forms.TextBox"
+      ],
+      [
+        "txbFirstName",
+        "System.Windows.Forms.TextBox"
+      ],
+      [
+        "txbLastName",
+        "System.Windows.Forms.TextBox"
+      ],
+      [
+        "btnLaodStudents",
+        "System.Windows.Forms.Button"
+      ],
+      [
+        "btnCourses",
+        "System.Windows.Forms.Button"
+      ]
+    ],
+    "operations": [
+      [
+        "Dispose",
+        "void",
+        [
+          [
+            "disposing",
+            "bool"
+          ]
+        ]
+      ],
+      [
+        "InitializeComponent",
+        "void",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "System.ComponentModel.IContainer",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.DataGridView",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Button",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Label",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Label",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Label",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.TextBox",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.TextBox",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.TextBox",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Button",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "System.Windows.Forms.Button",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  }
+]

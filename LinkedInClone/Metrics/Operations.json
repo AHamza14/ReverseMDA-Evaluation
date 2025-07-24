@@ -1,0 +1,128 @@
+{
+"PIM":
+{
+  "per_classifier": {
+    "jobposting": {
+      "true_positives": {
+        "count": 1,
+        "items": ["setrecruiter"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  },
+  "micro_average": {
+    "true_positives": 1,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  }
+}
+
+}
+
+{
+"PM":
+{
+  "per_classifier": {
+    "controller": {
+      "true_positives": {
+        "count": 1,
+        "items": ["handlerequest"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 9,
+        "items": [
+          "update",
+          "delete",
+          "index",
+          "accessdenied",
+          "create",
+          "deleteconfirmed",
+          "exists",
+          "details",
+          "edit"
+        ]
+      },
+      "precision": 1.0,
+      "recall": 0.1,
+      "f1_score": 0.18
+    },
+    "factory": {
+      "true_positives": {
+        "count": 1,
+        "items": ["addserviceclient"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "iemailsender": {
+      "true_positives": {
+        "count": 1,
+        "items": ["sendemailasync"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "httpclient": {
+      "true_positives": {
+        "count": 1,
+        "items": ["sendasync"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  },
+  "micro_average": {
+    "true_positives": 4,
+    "false_positives": 0,
+    "false_negatives": 9,
+    "precision": 1.0,
+    "recall": 0.31,
+    "f1_score": 0.47
+  }
+}
+
+}

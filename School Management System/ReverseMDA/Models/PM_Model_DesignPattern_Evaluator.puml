@@ -1,0 +1,8 @@
+@startuml PM_Model_DesignPattern_Evaluator
+' PM: Design Pattern Evaluator Model
+class Evaluator {
+    +GetQuery()
+}
+
+Evaluator --|> Specification
+@enduml

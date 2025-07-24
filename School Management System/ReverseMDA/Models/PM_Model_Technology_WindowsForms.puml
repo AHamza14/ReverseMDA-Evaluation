@@ -1,0 +1,17 @@
+@startuml PM_Model_Technology_WindowsForms
+' PM: Technology Windows Forms Model
+package "WinForms" {
+  class Form {
+    +components
+    +dataGridView
+    +textBox
+    +label
+    +button
+
+    +Handle*Click()
+    +RefreshDataGridViewAsync()
+  }
+}
+
+Form ..|> Attribute
+@enduml

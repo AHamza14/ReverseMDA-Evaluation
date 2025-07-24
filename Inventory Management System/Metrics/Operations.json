@@ -1,0 +1,271 @@
+{
+"PIM":
+{
+  "per_classifier": {
+    "calculationfactor": {
+      "true_positives": {
+        "count": 1,
+        "items": ["calculatefactor"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "document": {
+      "true_positives": {
+        "count": 1,
+        "items": ["add"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "productdocument": {
+      "true_positives": {
+        "count": 1,
+        "items": ["calculateprice"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  },
+  "micro_average": {
+    "true_positives": 3,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  }
+}
+
+}
+
+{
+"PM":
+{
+  "per_classifier": {
+    "controller": {
+      "true_positives": {
+        "count": 4,
+        "items": ["create", "read", "update", "delete"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "service": {
+      "true_positives": {
+        "count": 4,
+        "items": ["create", "read", "update", "delete"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "repository": {
+      "true_positives": {
+        "count": 4,
+        "items": ["create", "read", "readall", "delete"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "unitofwork": {
+      "true_positives": {
+        "count": 3,
+        "items": ["begintransaction", "commit", "rollback"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "map": {
+      "true_positives": {
+        "count": 1,
+        "items": ["override"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "sessionfactory": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 1,
+        "items": ["createsessionfactory"]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "session": {
+      "true_positives": {
+        "count": 1,
+        "items": ["opensession"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "convention": {
+      "true_positives": {
+        "count": 1,
+        "items": ["apply"]
+      },
+      "false_positives": {
+        "count": 1,
+        "items": ["getkeyname"]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.67
+    },
+    "interceptor": {
+      "true_positives": {
+        "count": 1,
+        "items": ["intercept"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "dependencyinjection": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 1,
+        "items": ["install"]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "container": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    }
+  },
+  "micro_average": {
+    "true_positives": 23,
+    "false_positives": 3,
+    "false_negatives": 0,
+    "precision": 0.88,
+    "recall": 1.0,
+    "f1_score": 0.94
+  }
+}
+
+}

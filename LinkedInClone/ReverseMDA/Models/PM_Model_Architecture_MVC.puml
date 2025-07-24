@@ -1,0 +1,32 @@
+@startuml PM_Model_Architecture_MVC
+' PM: Architecture MVC Model
+
+package "MVC" {
+    class Controller {
+        +logger
+        +roleManager
+        +dbContext
+        +signInManager
+        +userManager
+        +HandleRequest()
+    }
+    class ViewModel {
+        +users
+        +jobpostings
+        +posts
+        +comments
+    }
+    class PageModel {
+        +input
+        +externallogins
+        +returnurl
+        +errormessage
+        +HandlePageEvent()
+    }
+}
+
+' Relationships
+Controller ..|> ViewModel
+Controller ..|> PageModel
+
+@enduml

@@ -1,0 +1,545 @@
+{
+"PIM":
+{
+  "per_classifier": {
+    "admin": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 4,
+        "items": [
+          "users", "jobpostings", "posts", "comments"
+        ]
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "connection": {
+      "true_positives": {
+        "count": 5,
+        "items": [
+          "id", "accountowner", "friend", "createddate", "accepted"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "jobapplication": {
+      "true_positives": {
+        "count": 6,
+        "items": [
+          "jobapplicationid", "applicant", "job", "filepath", "filename", "createddate"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "jobposting": {
+      "true_positives": {
+        "count": 6,
+        "items": [
+          "id", "recruiter", "jobtitle", "description", "createddate", "jobapplications"
+        ]
+      },
+      "false_positives": {
+        "count": 1,
+        "items": [
+          "recruitid"
+        ]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.86,
+      "recall": 1.0,
+      "f1_score": 0.92
+    },
+    "message": {
+      "true_positives": {
+        "count": 6,
+        "items": [
+          "id", "sentby", "receivedby", "content", "sentdate", "conversation"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "applicationuser": {
+      "true_positives": {
+        "count": 3,
+        "items": [
+          "createddate", "company", "fullname"
+        ]
+      },
+      "false_positives": {
+        "count": 1,
+        "items": [
+          "roleid"
+        ]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1_score": 0.86
+    },
+    "blobcontent": {
+      "true_positives": {
+        "count": 2,
+        "items": [
+          "filepath", "filename"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "blobobject": {
+      "true_positives": {
+        "count": 2,
+        "items": [
+          "content", "contenttype"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "comment": {
+      "true_positives": {
+        "count": 5,
+        "items": [
+          "id", "post", "author", "content", "createddated"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "conversation": {
+      "true_positives": {
+        "count": 5,
+        "items": [
+          "id", "startedby", "receivedby", "createddate", "messages"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "like": {
+      "true_positives": {
+        "count": 4,
+        "items": [
+          "id", "likedpost", "likedby", "likeddate"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "newsmodel": {
+      "true_positives": {
+        "count": 8,
+        "items": [
+          "source", "author", "title", "description", "url", "urltoimage", "publishedat", "content"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "newsresponse": {
+      "true_positives": {
+        "count": 3,
+        "items": [
+          "status", "totalresults", "articles"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "post": {
+      "true_positives": {
+        "count": 9,
+        "items": [
+          "id", "author", "content", "posteddate", "filepath", "filename", "likes", "comments"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "recruiteruser": {
+      "true_positives": {
+        "count": 2,
+        "items": [
+          "company", "fullname"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "source": {
+      "true_positives": {
+        "count": 2,
+        "items": [
+          "id", "name"
+        ]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    }
+  },
+  "micro_average": {
+    "true_positives": 67,
+    "false_positives": 2,
+    "false_negatives": 4,
+    "precision": 0.97,
+    "recall": 0.94,
+    "f1_score": 0.96
+  }
+}
+
+}
+
+{
+"PM":
+{
+  "per_classifier": {
+    "controller": {
+      "true_positives": {
+        "count": 5,
+        "items": ["logger", "rolemanager", "dbcontext", "signinmanager", "usermanager"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "viewmodel": {
+      "true_positives": {
+        "count": 4,
+        "items": ["users", "jobpostings", "posts", "comments"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "factory": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "identityuser": {
+      "true_positives": {
+        "count": 1,
+        "items": ["id"]
+      },
+      "false_positives": {
+        "count": 3,
+        "items": ["username", "email", "passwordhash"]
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1_score": 0.4
+    },
+    "ilogger": {
+      "true_positives": {
+        "count": 1,
+        "items": ["loglevel"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "iemailsender": {
+      "true_positives": {
+        "count": 1,
+        "items": ["options"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "iserviceprovider": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "iactionresult": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "httpclient": {
+      "true_positives": {
+        "count": 1,
+        "items": ["baseaddress"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "authenticationscheme": {
+      "true_positives": {
+        "count": 1,
+        "items": ["name"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "iazureclientbuilder": {
+      "true_positives": {
+        "count": 2,
+        "items": ["serviceclient", "clientoptions"]
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0
+    },
+    "azureclientfactorybuilder": {
+      "true_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_positives": {
+        "count": 0,
+        "items": []
+      },
+      "false_negatives": {
+        "count": 0,
+        "items": []
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    }
+  },
+  "micro_average": {
+    "true_positives": 16,
+    "false_positives": 3,
+    "false_negatives": 4,
+    "precision": 0.84,
+    "recall": 0.8,
+    "f1_score": 0.82
+  }
+}
+
+}

@@ -1,0 +1,576 @@
+{
+  "PIM attributes": 
+	{
+	  "per_classifier": {
+		"address": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["bytes"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 1,
+			"items": ["random"]
+		  },
+		  "precision": 1.0,
+		  "recall": 0.5,
+		  "f1_score": 0.67
+		},
+		"hash": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["bytes"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 1,
+			"items": ["random"]
+		  },
+		  "precision": 1.0,
+		  "recall": 0.5,
+		  "f1_score": 0.67
+		},
+		"blockhash": {
+		  "true_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 0.0,
+		  "recall": 0.0,
+		  "f1_score": 0.0
+		},
+		"accountstate": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["balance", "nonce"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"accountsstate": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["states"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 2,
+			"items": ["encoder", "defaultvalue"]
+		  },
+		  "precision": 1.0,
+		  "recall": 0.33,
+		  "f1_score": 0.5
+		},
+		"block": {
+		  "true_positives": {
+			"count": 5,
+			"items": ["transactions", "number", "hash", "parenthash", "isgenesis"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 3,
+			"items": ["emptytxs", "transactionencoder", "header"]
+		  },
+		  "precision": 1.0,
+		  "recall": 0.62,
+		  "f1_score": 0.77
+		},
+		"blockchain": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["bestblock", "bestblocknumber"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 1,
+			"items": ["blockstore"]
+		  },
+		  "precision": 1.0,
+		  "recall": 0.67,
+		  "f1_score": 0.8
+		},
+		"blockexecutor": {
+		  "true_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 0.0,
+		  "recall": 0.0,
+		  "f1_score": 0.0
+		},
+		"blockheader": {
+		  "true_positives": {
+			"count": 4,
+			"items": ["number", "parenthash", "transactionshash", "hash"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"blockinfo": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["block", "state"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"status": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["height", "hash"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"transaction": {
+		  "true_positives": {
+			"count": 4,
+			"items": ["sender", "receiver", "value", "hash"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"message": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["messagetype"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"blockmessage": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["block"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"statusmessage": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["status"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"transactionmessage": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["transaction"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"messagetype": {
+		  "true_positives": {
+			"count": 3,
+			"items": ["blockmessage", "transactionmessage", "statusmessage"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"blockprocess": {
+		  "true_positives": {
+			"count": 4,
+			"items": ["imported", "notimported", "known", "missingancestor"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"transactionprocess": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["added", "known"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		}
+	  },
+	  "micro_average": {
+		"true_positives": 40,
+		"false_positives": 0,
+		"false_negatives": 8,
+		"precision": 1.0,
+		"recall": 0.83,
+		"f1_score": 0.91
+	  }
+	}
+}
+
+{
+  "PM attributes": 
+	{
+	  "per_classifier": {
+		"builder": {
+		  "true_positives": {
+			"count": 4,
+			"items": ["address", "origin", "caller", "coinbase"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"programenvironment": {
+		  "true_positives": {
+			"count": 4,
+			"items": ["address", "origin", "caller", "coinbase"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"compiler": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["compiler", "lines"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"encoder": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["instance"]
+		  },
+		  "false_positives": {
+			"count": 3,
+			"items": ["hashencoder", "bigintegerencoder", "addressencoder"]
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 0.25,
+		  "recall": 1.0,
+		  "f1_score": 0.4
+		},
+		"processor": {
+		  "true_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_positives": {
+			"count": 2,
+			"items": ["chain", "transactionpool"]
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 0.0,
+		  "recall": 0.0,
+		  "f1_score": 0.0
+		},
+		"trie": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["leafs", "value"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"store": {
+		  "true_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_positives": {
+			"count": 1,
+			"items": ["blocks"]
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 0.0,
+		  "recall": 0.0,
+		  "f1_score": 0.0
+		},
+		"machine": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["stack", "memory"]
+		  },
+		  "false_positives": {
+			"count": 1,
+			"items": ["programenvironment"]
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 0.67,
+		  "recall": 1.0,
+		  "f1_score": 0.8
+		},
+		"memory": {
+		  "true_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_positives": {
+			"count": 2,
+			"items": ["blocksize", "blocks"]
+		  },
+		  "false_negatives": {
+			"count": 1,
+			"items": ["size"]
+		  },
+		  "precision": 0.0,
+		  "recall": 0.0,
+		  "f1_score": 0.0
+		},
+		"stack": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["stack", "size"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"storage": {
+		  "true_positives": {
+			"count": 1,
+			"items": ["state"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"dataword": {
+		  "true_positives": {
+			"count": 2,
+			"items": ["value", "bytes"]
+		  },
+		  "false_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_negatives": {
+			"count": 0,
+			"items": []
+		  },
+		  "precision": 1.0,
+		  "recall": 1.0,
+		  "f1_score": 1.0
+		},
+		"bytecode": {
+		  "true_positives": {
+			"count": 0,
+			"items": []
+		  },
+		  "false_positives": {
+			"count": 1,
+			"items": ["bytes"]
+		  },
+		  "false_negatives": {
+			"count": 1,
+			"items": ["alot"]
+		  },
+		  "precision": 0.0,
+		  "recall": 0.0,
+		  "f1_score": 0.0
+		}
+	  },
+	  "micro_average": {
+		"true_positives": 22,
+		"false_positives": 10,
+		"false_negatives": 2,
+		"precision": 0.69,
+		"recall": 0.92,
+		"f1_score": 0.79
+	  }
+	}
+}
+

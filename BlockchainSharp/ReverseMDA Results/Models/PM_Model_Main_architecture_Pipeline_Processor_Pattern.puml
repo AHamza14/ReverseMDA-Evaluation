@@ -1,0 +1,14 @@
+@startuml PM_Model_Main_architecture_Pipeline_Processor_Pattern
+' PM: Architecture Main architecture: Pipeline Processor Pattern Model
+
+package "Processor Pattern" {
+    class Processor {
+        +chain : BlockChain
+        +transactionPool : TransactionPool
+        +Process()
+        +TryConnectChildren()
+        +Mine()
+    }
+}
+
+@enduml

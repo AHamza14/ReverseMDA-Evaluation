@@ -1,0 +1,3346 @@
+[
+  {
+    "name": "AzureClientFactoryBuilderExtensions",
+    "type": "class",
+    "namespace": "",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "AddBlobServiceClient",
+        "IAzureClientBuilder<BlobServiceClient, BlobClientOptions>",
+        [
+          [
+            "builder",
+            "AzureClientFactoryBuilder"
+          ],
+          [
+            "serviceUriOrConnectionString",
+            "string"
+          ],
+          [
+            "preferMsi",
+            "bool"
+          ]
+        ]
+      ],
+      [
+        "AddQueueServiceClient",
+        "IAzureClientBuilder<QueueServiceClient, QueueClientOptions>",
+        [
+          [
+            "builder",
+            "AzureClientFactoryBuilder"
+          ],
+          [
+            "serviceUriOrConnectionString",
+            "string"
+          ],
+          [
+            "preferMsi",
+            "bool"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "LoginModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Areas.Identity.Pages.Account",
+    "bases": [
+      "PageModel"
+    ],
+    "attributes": [
+      [
+        "_signInManager",
+        "SignInManager<ApplicationUser>"
+      ],
+      [
+        "_logger",
+        "ILogger<LoginModel>"
+      ],
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ],
+      [
+        "input",
+        "InputModel",
+        "property"
+      ],
+      [
+        "externallogins",
+        "IList<AuthenticationScheme>",
+        "property"
+      ],
+      [
+        "returnurl",
+        "string",
+        "property"
+      ],
+      [
+        "errormessage",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "OnGetAsync",
+        "Task",
+        []
+      ],
+      [
+        "OnPostAsync",
+        "Task<IActionResult>",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "SignInManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ILogger<LoginModel>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "InputModel",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IList<AuthenticationScheme>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "InputModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Areas.Identity.Pages.Account",
+    "bases": [],
+    "attributes": [
+      [
+        "email",
+        "string",
+        "property"
+      ],
+      [
+        "password",
+        "string",
+        "property"
+      ],
+      [
+        "rememberme",
+        "bool",
+        "property"
+      ],
+      [
+        "externallogins",
+        "IList<AuthenticationScheme>",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "IList<AuthenticationScheme>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "LogoutModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Areas.Identity.Pages.Account",
+    "bases": [
+      "PageModel"
+    ],
+    "attributes": [
+      [
+        "_signInManager",
+        "SignInManager<ApplicationUser>"
+      ],
+      [
+        "_logger",
+        "ILogger<LogoutModel>"
+      ]
+    ],
+    "operations": [
+      [
+        "OnPost",
+        "Task<IActionResult>",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "SignInManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ILogger<LogoutModel>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "RecruiterRegisterModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Areas.Identity.Pages.Account",
+    "bases": [
+      "PageModel"
+    ],
+    "attributes": [
+      [
+        "_signInManager",
+        "SignInManager<ApplicationUser>"
+      ],
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ],
+      [
+        "_userStore",
+        "IUserStore<ApplicationUser>"
+      ],
+      [
+        "_emailStore",
+        "IUserEmailStore<ApplicationUser>"
+      ],
+      [
+        "_logger",
+        "ILogger<RecruiterRegisterModel>"
+      ],
+      [
+        "_emailSender",
+        "IEmailSender"
+      ],
+      [
+        "_roleManager",
+        "RoleManager<IdentityRole>"
+      ],
+      [
+        "input",
+        "InputModel",
+        "property"
+      ],
+      [
+        "returnurl",
+        "string",
+        "property"
+      ],
+      [
+        "externallogins",
+        "IList<AuthenticationScheme>",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "OnGetAsync",
+        "Task",
+        [
+          [
+            "returnUrl",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "OnPostAsync",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "CreateUser",
+        "ApplicationUser",
+        []
+      ],
+      [
+        "GetEmailStore",
+        "IUserEmailStore<ApplicationUser>",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "SignInManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IUserStore<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IUserEmailStore<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ILogger<RecruiterRegisterModel>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IEmailSender",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "RoleManager<IdentityRole>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "InputModel",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IList<AuthenticationScheme>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "InputModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Areas.Identity.Pages.Account",
+    "bases": [],
+    "attributes": [
+      [
+        "fullname",
+        "string",
+        "property"
+      ],
+      [
+        "email",
+        "string",
+        "property"
+      ],
+      [
+        "password",
+        "string",
+        "property"
+      ],
+      [
+        "confirmpassword",
+        "string",
+        "property"
+      ],
+      [
+        "company",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "RegisterModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Areas.Identity.Pages.Account",
+    "bases": [
+      "PageModel"
+    ],
+    "attributes": [
+      [
+        "_signInManager",
+        "SignInManager<ApplicationUser>"
+      ],
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ],
+      [
+        "_userStore",
+        "IUserStore<ApplicationUser>"
+      ],
+      [
+        "_emailStore",
+        "IUserEmailStore<ApplicationUser>"
+      ],
+      [
+        "_logger",
+        "ILogger<RegisterModel>"
+      ],
+      [
+        "_roleManager",
+        "RoleManager<IdentityRole>"
+      ],
+      [
+        "input",
+        "InputModel",
+        "property"
+      ],
+      [
+        "returnurl",
+        "string",
+        "property"
+      ],
+      [
+        "externallogins",
+        "IList<AuthenticationScheme>",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "OnGetAsync",
+        "Task",
+        [
+          [
+            "returnUrl",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "OnPostAsync",
+        "Task<IActionResult>",
+        [
+          [
+            "returnUrl",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "CreateUser",
+        "ApplicationUser",
+        []
+      ],
+      [
+        "GetEmailStore",
+        "IUserEmailStore<ApplicationUser>",
+        []
+      ],
+      [
+        "CreateRolesandUsers",
+        "Task",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "SignInManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IUserStore<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IUserEmailStore<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ILogger<RegisterModel>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "RoleManager<IdentityRole>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "InputModel",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IList<AuthenticationScheme>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "InputModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Areas.Identity.Pages.Account",
+    "bases": [],
+    "attributes": [
+      [
+        "email",
+        "string",
+        "property"
+      ],
+      [
+        "fullname",
+        "string",
+        "property"
+      ],
+      [
+        "password",
+        "string",
+        "property"
+      ],
+      [
+        "confirmpassword",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "RegisterConfirmationModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Areas.Identity.Pages.Account",
+    "bases": [
+      "PageModel"
+    ],
+    "attributes": [
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ],
+      [
+        "_sender",
+        "IEmailSender"
+      ],
+      [
+        "email",
+        "string",
+        "property"
+      ],
+      [
+        "displayconfirmaccountlink",
+        "bool",
+        "property"
+      ],
+      [
+        "emailconfirmationurl",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "OnGetAsync",
+        "Task<IActionResult>",
+        [
+          [
+            "email",
+            "string"
+          ],
+          [
+            "returnUrl",
+            "string"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IEmailSender",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "AccountController",
+    "type": "class",
+    "namespace": "",
+    "bases": [
+      "Controller"
+    ],
+    "attributes": [
+      [
+        "_logger",
+        "ILogger<AccountController>"
+      ],
+      [
+        "_roleManager",
+        "RoleManager<IdentityRole>"
+      ],
+      [
+        "_db",
+        "AppDbContext"
+      ],
+      [
+        "_signInManager",
+        "SignInManager<ApplicationUser>"
+      ],
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ]
+    ],
+    "operations": [
+      [
+        "GoogleLogin",
+        "IActionResult",
+        []
+      ],
+      [
+        "GoogleResponse",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "DeleteUser",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "UpdateUser",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "CreateRolesandUsers",
+        "Task",
+        []
+      ],
+      [
+        "AccessDenied",
+        "IActionResult",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "ILogger<AccountController>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "RoleManager<IdentityRole>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "AppDbContext",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "SignInManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "AdminController",
+    "type": "class",
+    "namespace": "",
+    "bases": [
+      "Controller"
+    ],
+    "attributes": [
+      [
+        "_logger",
+        "ILogger<AdminController>"
+      ],
+      [
+        "_roleManager",
+        "RoleManager<IdentityRole>"
+      ],
+      [
+        "_db",
+        "AppDbContext"
+      ],
+      [
+        "_signInManager",
+        "SignInManager<ApplicationUser>"
+      ],
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ]
+    ],
+    "operations": [
+      [
+        "DeleteUser",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "DeletePost",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "DeleteJobPosting",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "DeleteComment",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "AccessDenied",
+        "IActionResult",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "ILogger<AdminController>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "RoleManager<IdentityRole>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "AppDbContext",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "SignInManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "ConnectionsController",
+    "type": "class",
+    "namespace": "LinkedInClone.Controllers",
+    "bases": [
+      "Controller"
+    ],
+    "attributes": [
+      [
+        "_context",
+        "AppDbContext"
+      ],
+      [
+        "_newsAPIService",
+        "INewsAPIService"
+      ]
+    ],
+    "operations": [
+      [
+        "SearchResults",
+        "Task<IActionResult>",
+        [
+          [
+            "searchKeyWord",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "Index",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "Details",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "AddConnection",
+        "IActionResult",
+        [
+          [
+            "id",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "Accept",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "Deny",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "DeleteConfirmed",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "ConnectionExists",
+        "bool",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "AppDbContext",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "INewsAPIService",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "HomeController",
+    "type": "class",
+    "namespace": "",
+    "bases": [
+      "Controller"
+    ],
+    "attributes": [
+      [
+        "_logger",
+        "ILogger<HomeController>"
+      ],
+      [
+        "_roleManager",
+        "RoleManager<IdentityRole>"
+      ],
+      [
+        "_db",
+        "AppDbContext"
+      ],
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ],
+      [
+        "_newsAPIService",
+        "INewsAPIService"
+      ]
+    ],
+    "operations": [
+      [
+        "Index",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "MyAccount",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "AdminPanel",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "Error",
+        "IActionResult",
+        []
+      ],
+      [
+        "Recruiter",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "AccessDenied",
+        "IActionResult",
+        []
+      ],
+      [
+        "PageNotFound",
+        "IActionResult",
+        []
+      ],
+      [
+        "UnderConstruction",
+        "IActionResult",
+        []
+      ],
+      [
+        "Message",
+        "IActionResult",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "ILogger<HomeController>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "RoleManager<IdentityRole>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "AppDbContext",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "INewsAPIService",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "JobApplicationsController",
+    "type": "class",
+    "namespace": "LinkedInClone.Controllers",
+    "bases": [
+      "Controller"
+    ],
+    "attributes": [
+      [
+        "_context",
+        "AppDbContext"
+      ],
+      [
+        "_logger",
+        "ILogger"
+      ],
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ],
+      [
+        "_blobService",
+        "IBlobService"
+      ],
+      [
+        "_emailSender",
+        "IEmailSender"
+      ]
+    ],
+    "operations": [
+      [
+        "UserApplications",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "AllAvailableJobs",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "Create",
+        "IActionResult",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "Create",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ],
+          [
+            "jobApplication",
+            "JobApplication"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "DeleteConfirmed",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "JobApplicationExists",
+        "bool",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "AppDbContext",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ILogger",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IBlobService",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IEmailSender",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "JobPostingsController",
+    "type": "class",
+    "namespace": "LinkedInClone.Controllers",
+    "bases": [
+      "Controller"
+    ],
+    "attributes": [
+      [
+        "_context",
+        "AppDbContext"
+      ],
+      [
+        "_logger",
+        "ILogger"
+      ],
+      [
+        "_userManager",
+        "UserManager<ApplicationUser>"
+      ]
+    ],
+    "operations": [
+      [
+        "RecruiterJobPostings",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "Applicants",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "Details",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "Create",
+        "IActionResult",
+        []
+      ],
+      [
+        "Create",
+        "Task<IActionResult>",
+        [
+          [
+            "jobPosting",
+            "JobPosting"
+          ]
+        ]
+      ],
+      [
+        "Edit",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "Edit",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ],
+          [
+            "jobPosting",
+            "JobPosting"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "DeleteConfirmed",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "JobPostingExists",
+        "bool",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "DeleteApplication",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "AppDbContext",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ILogger",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "UserManager<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "MessagesController",
+    "type": "class",
+    "namespace": "LinkedInClone.Controllers",
+    "bases": [
+      "Controller"
+    ],
+    "attributes": [
+      [
+        "_context",
+        "AppDbContext"
+      ],
+      [
+        "_logger",
+        "ILogger<MessagesController>"
+      ]
+    ],
+    "operations": [
+      [
+        "Conversations",
+        "Task<ActionResult>",
+        []
+      ],
+      [
+        "Create",
+        "IActionResult",
+        []
+      ],
+      [
+        "CreateNewConvo",
+        "Task<IActionResult>",
+        [
+          [
+            "Receiver",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "AddConversationRecruiter",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "Message",
+        "IActionResult",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "NewMessage",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "string"
+          ],
+          [
+            "MessageContent",
+            "string"
+          ],
+          [
+            "conversationId",
+            "int"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "AppDbContext",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ILogger<MessagesController>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "PostsController",
+    "type": "class",
+    "namespace": "LinkedInClone.Controllers",
+    "bases": [
+      "Controller"
+    ],
+    "attributes": [
+      [
+        "_context",
+        "AppDbContext"
+      ],
+      [
+        "_blobService",
+        "IBlobService"
+      ],
+      [
+        "_logger",
+        "ILogger<PostsController>"
+      ]
+    ],
+    "operations": [
+      [
+        "GetMediaFile",
+        "Task<IActionResult>",
+        [
+          [
+            "fileName",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "Details",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "Create",
+        "IActionResult",
+        []
+      ],
+      [
+        "Create",
+        "Task<IActionResult>",
+        [
+          [
+            "post",
+            "Post"
+          ]
+        ]
+      ],
+      [
+        "Edit",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "Edit",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ],
+          [
+            "post",
+            "Post"
+          ]
+        ]
+      ],
+      [
+        "Delete",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int?"
+          ]
+        ]
+      ],
+      [
+        "DeleteConfirmed",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "MyPosts",
+        "Task<IActionResult>",
+        []
+      ],
+      [
+        "Like",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "Unlike",
+        "Task<IActionResult>",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "Comment",
+        "ActionResult",
+        [
+          [
+            "CommentText",
+            "string"
+          ],
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ],
+      [
+        "LikedPosts",
+        "ActionResult",
+        []
+      ],
+      [
+        "PostExists",
+        "bool",
+        [
+          [
+            "id",
+            "int"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "AppDbContext",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IBlobService",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ILogger<PostsController>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "AppDbContext",
+    "type": "class",
+    "namespace": "LinkedInClone.Data",
+    "bases": [
+      "IdentityDbContext<ApplicationUser>"
+    ],
+    "attributes": [
+      [
+        "_options",
+        "DbContextOptions"
+      ],
+      [
+        "appusers",
+        "DbSet<ApplicationUser>",
+        "property"
+      ],
+      [
+        "recruiters",
+        "DbSet<RecruiterUser>",
+        "property"
+      ],
+      [
+        "messages",
+        "DbSet<Message>",
+        "property"
+      ],
+      [
+        "comments",
+        "DbSet<Comment>",
+        "property"
+      ],
+      [
+        "posts",
+        "DbSet<Post>",
+        "property"
+      ],
+      [
+        "likes",
+        "DbSet<Like>",
+        "property"
+      ],
+      [
+        "connections",
+        "DbSet<Connection>",
+        "property"
+      ],
+      [
+        "conversations",
+        "DbSet<Conversation>",
+        "property"
+      ],
+      [
+        "jobpostings",
+        "DbSet<JobPosting>",
+        "property"
+      ],
+      [
+        "jobapplications",
+        "DbSet<JobApplication>",
+        "property"
+      ],
+      [
+        "_roleManager",
+        "RoleManager<IdentityRole>"
+      ]
+    ],
+    "operations": [
+      [
+        "SoundsLike",
+        "string",
+        [
+          [
+            "keyword",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "OnConfiguring",
+        "void",
+        [
+          [
+            "optionsBuilder",
+            "DbContextOptionsBuilder"
+          ]
+        ]
+      ],
+      [
+        "OnModelCreating",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "DbContextOptions",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<ApplicationUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<RecruiterUser>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<Message>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<Comment>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<Post>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<Like>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<Connection>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<Conversation>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<JobPosting>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DbSet<JobApplication>",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "RoleManager<IdentityRole>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "ResetNewDatabase",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [
+      "Migration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Up",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ],
+      [
+        "Down",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "ResetNewDatabase",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildTargetModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "RemovingRequired",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [
+      "Migration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Up",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ],
+      [
+        "Down",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "RemovingRequired",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildTargetModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "ResetConnectionsTable",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [
+      "Migration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Up",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ],
+      [
+        "Down",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "ResetConnectionsTable",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildTargetModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "AddConversationsTable",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [
+      "Migration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Up",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ],
+      [
+        "Down",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "AddConversationsTable",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildTargetModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "AddConversationsTable1",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [
+      "Migration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Up",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ],
+      [
+        "Down",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "AddConversationsTable1",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildTargetModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "RecruiterIdForEmail",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [
+      "Migration"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "Up",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ],
+      [
+        "Down",
+        "void",
+        [
+          [
+            "migrationBuilder",
+            "MigrationBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "RecruiterIdForEmail",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildTargetModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "AppDbContextModelSnapshot",
+    "type": "class",
+    "namespace": "LinkedInClone.Data.Migrations",
+    "bases": [
+      "ModelSnapshot"
+    ],
+    "attributes": [],
+    "operations": [
+      [
+        "BuildModel",
+        "void",
+        [
+          [
+            "modelBuilder",
+            "ModelBuilder"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "AdminPanelViewModel",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "users",
+        "List<ApplicationUser>",
+        "property"
+      ],
+      [
+        "jobpostings",
+        "List<JobPosting>",
+        "property"
+      ],
+      [
+        "posts",
+        "List<Post>",
+        "property"
+      ],
+      [
+        "comments",
+        "List<Comment>",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "AddComment",
+        "void",
+        [
+          [
+            "comment",
+            "Comment"
+          ]
+        ]
+      ],
+      [
+        "AddPost",
+        "void",
+        [
+          [
+            "post",
+            "Post"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "*"
+      ],
+      [
+        "JobPosting",
+        "association",
+        "1",
+        "*"
+      ],
+      [
+        "Post",
+        "association",
+        "1",
+        "*"
+      ],
+      [
+        "Comment",
+        "association",
+        "1",
+        "*"
+      ]
+    ]
+  },
+  {
+    "name": "AdminUser",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [
+      "IdentityUser"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "ApplicationUser",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [
+      "IdentityUser"
+    ],
+    "attributes": [
+      [
+        "createddate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "roleid",
+        "string",
+        "property"
+      ],
+      [
+        "company",
+        "string",
+        "property"
+      ],
+      [
+        "fullname",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "AuthMessageSenderOptions",
+    "type": "class",
+    "namespace": "LinkedInClone",
+    "bases": [],
+    "attributes": [
+      [
+        "smtpserver",
+        "string",
+        "property"
+      ],
+      [
+        "smtpport",
+        "int",
+        "property"
+      ],
+      [
+        "senderemail",
+        "string",
+        "property"
+      ],
+      [
+        "senderpassword",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "Comment",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "int",
+        "property"
+      ],
+      [
+        "post",
+        "Post",
+        "property"
+      ],
+      [
+        "author",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "content",
+        "string",
+        "property"
+      ],
+      [
+        "createddated",
+        "DateTime",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "Post",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Connection",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "int",
+        "property"
+      ],
+      [
+        "accountowner",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "friend",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "createddate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "accepted",
+        "bool",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Conversation",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "int",
+        "property"
+      ],
+      [
+        "startedby",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "receivedby",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "createddate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "messages",
+        "IList<Message>",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IList<Message>",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "ErrorViewModel",
+    "type": "class",
+    "namespace": "",
+    "bases": [],
+    "attributes": [
+      [
+        "requestid",
+        "string",
+        "property"
+      ],
+      [
+        "showrequestid",
+        "bool",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "JobApplication",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "jobapplicationid",
+        "int",
+        "property"
+      ],
+      [
+        "applicant",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "job",
+        "JobPosting",
+        "property"
+      ],
+      [
+        "filepath",
+        "string?",
+        "property"
+      ],
+      [
+        "filename",
+        "string?",
+        "property"
+      ],
+      [
+        "createddate",
+        "DateTime",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "JobPosting",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "string?",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "string?",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "JobPosting",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "int",
+        "property"
+      ],
+      [
+        "recruiter",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "recruitid",
+        "string",
+        "property"
+      ],
+      [
+        "jobtitle",
+        "string",
+        "property"
+      ],
+      [
+        "description",
+        "string",
+        "property"
+      ],
+      [
+        "createddate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "jobapplications",
+        "ICollection<JobApplication>",
+        "property"
+      ]
+    ],
+    "operations": [
+      [
+        "SetRecruiter",
+        "void",
+        [
+          [
+            "recruiter",
+            "ApplicationUser"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "JobApplication",
+        "association",
+        "1",
+        "*"
+      ]
+    ]
+  },
+  {
+    "name": "Like",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "int",
+        "property"
+      ],
+      [
+        "likedpost",
+        "Post",
+        "property"
+      ],
+      [
+        "likedby",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "likeddate",
+        "DateTime",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "Post",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Message",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "int",
+        "property"
+      ],
+      [
+        "sentby",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "receivedby",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "content",
+        "string",
+        "property"
+      ],
+      [
+        "sentdate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "conversation",
+        "Conversation",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "Conversation",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "NewsModel",
+    "type": "class",
+    "namespace": "",
+    "bases": [],
+    "attributes": [
+      [
+        "source",
+        "Source",
+        "property"
+      ],
+      [
+        "author",
+        "string",
+        "property"
+      ],
+      [
+        "title",
+        "string",
+        "property"
+      ],
+      [
+        "description",
+        "string",
+        "property"
+      ],
+      [
+        "url",
+        "string",
+        "property"
+      ],
+      [
+        "urltoimage",
+        "string",
+        "property"
+      ],
+      [
+        "publishedat",
+        "string",
+        "property"
+      ],
+      [
+        "content",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "Source",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Source",
+    "type": "class",
+    "namespace": "",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "string",
+        "property"
+      ],
+      [
+        "name",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "NewsResponse",
+    "type": "class",
+    "namespace": "",
+    "bases": [],
+    "attributes": [
+      [
+        "status",
+        "string",
+        "property"
+      ],
+      [
+        "totalresults",
+        "int",
+        "property"
+      ],
+      [
+        "articles",
+        "List<NewsModel>",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "NewsModel",
+        "association",
+        "1",
+        "*"
+      ]
+    ]
+  },
+  {
+    "name": "Post",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [
+      [
+        "id",
+        "int",
+        "property"
+      ],
+      [
+        "author",
+        "ApplicationUser",
+        "property"
+      ],
+      [
+        "content",
+        "string",
+        "property"
+      ],
+      [
+        "posteddate",
+        "DateTime",
+        "property"
+      ],
+      [
+        "filepath",
+        "string?",
+        "property"
+      ],
+      [
+        "filename",
+        "string?",
+        "property"
+      ],
+      [
+        "likes",
+        "IList<Like>?",
+        "property"
+      ],
+      [
+        "comments",
+        "IList<Comment>?",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "ApplicationUser",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "DateTime",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "string?",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "string?",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IList<Like>?",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "IList<Comment>?",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "RecruiterUser",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [
+      "ApplicationUser"
+    ],
+    "attributes": [
+      [
+        "company",
+        "string",
+        "property"
+      ],
+      [
+        "fullname",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "SeedData",
+    "type": "class",
+    "namespace": "LinkedInClone.Models",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "Initialize",
+        "void",
+        [
+          [
+            "serviceProvider",
+            "IServiceProvider"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "BlobContent",
+    "type": "class",
+    "namespace": "LinkedInClone.Models.Blobs",
+    "bases": [],
+    "attributes": [
+      [
+        "filepath",
+        "string",
+        "property"
+      ],
+      [
+        "filename",
+        "string",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "BlobObject",
+    "type": "class",
+    "namespace": "LinkedInClone.Models.Blobs",
+    "bases": [],
+    "attributes": [
+      [
+        "content",
+        "Stream?",
+        "property"
+      ],
+      [
+        "contenttype",
+        "string?",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": [
+      [
+        "Stream?",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "string?",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "AdminRole",
+    "type": "class",
+    "namespace": "LinkedInClone.Models.Roles",
+    "bases": [
+      "IdentityRole"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "RecruiterRole",
+    "type": "class",
+    "namespace": "LinkedInClone.Models.Roles",
+    "bases": [
+      "IdentityRole"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "UserRole",
+    "type": "class",
+    "namespace": "LinkedInClone.Models.Roles",
+    "bases": [
+      "IdentityRole"
+    ],
+    "attributes": [],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "BlobService",
+    "type": "class",
+    "namespace": "LinkedInClone.Services",
+    "bases": [
+      "IBlobService"
+    ],
+    "attributes": [
+      [
+        "_blobServiceClient",
+        "BlobServiceClient"
+      ],
+      [
+        "_client",
+        "BlobContainerClient"
+      ],
+      [
+        "ImageExtensions",
+        "List<string>"
+      ],
+      [
+        "VideoExtensions",
+        "List<string>"
+      ],
+      [
+        "DocExtensions",
+        "List<string>"
+      ]
+    ],
+    "operations": [
+      [
+        "DeleteBlob",
+        "void",
+        [
+          [
+            "name",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "GetBlobAsync",
+        "Task<BlobObject>",
+        [
+          [
+            "url",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "UploadFileBlobAsync",
+        "Task<string>",
+        [
+          [
+            "filePath",
+            "string"
+          ],
+          [
+            "fileName",
+            "string"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "BlobServiceClient",
+        "association",
+        "1",
+        "1"
+      ],
+      [
+        "BlobContainerClient",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "EmailSender",
+    "type": "class",
+    "namespace": "LinkedInClone.Services",
+    "bases": [
+      "IEmailSender"
+    ],
+    "attributes": [
+      [
+        "_options",
+        "AuthMessageSenderOptions"
+      ]
+    ],
+    "operations": [
+      [
+        "SendEmailAsync",
+        "Task",
+        [
+          [
+            "email",
+            "string"
+          ],
+          [
+            "subject",
+            "string"
+          ],
+          [
+            "message",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "Execute",
+        "Task",
+        [
+          [
+            "email",
+            "string"
+          ],
+          [
+            "subject",
+            "string"
+          ],
+          [
+            "message",
+            "string"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "AuthMessageSenderOptions",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "FinnhubClient",
+    "type": "class",
+    "namespace": "LinkedInClone",
+    "bases": [],
+    "attributes": [
+      [
+        "_httpClient",
+        "HttpClient"
+      ],
+      [
+        "_apiKey",
+        "string"
+      ]
+    ],
+    "operations": [
+      [
+        "GetQuotesAsync",
+        "Task<Dictionary<string, Quote>>",
+        [
+          [
+            "symbols",
+            "string[]"
+          ]
+        ]
+      ],
+      [
+        "GetQuoteAsync",
+        "Task<Quote>",
+        [
+          [
+            "symbol",
+            "string"
+          ]
+        ]
+      ]
+    ],
+    "relationships": [
+      [
+        "HttpClient",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  {
+    "name": "Quote",
+    "type": "class",
+    "namespace": "LinkedInClone",
+    "bases": [],
+    "attributes": [
+      [
+        "o",
+        "decimal",
+        "property"
+      ],
+      [
+        "h",
+        "decimal",
+        "property"
+      ],
+      [
+        "l",
+        "decimal",
+        "property"
+      ],
+      [
+        "c",
+        "decimal",
+        "property"
+      ],
+      [
+        "pc",
+        "decimal",
+        "property"
+      ],
+      [
+        "t",
+        "long",
+        "property"
+      ]
+    ],
+    "operations": [],
+    "relationships": []
+  },
+  {
+    "name": "IBlobService",
+    "type": "interface",
+    "namespace": "LinkedInClone.Services",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "GetBlobAsync",
+        "Task<BlobObject>",
+        [
+          [
+            "url",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "UploadFileBlobAsync",
+        "Task<string>",
+        [
+          [
+            "filePath",
+            "string"
+          ],
+          [
+            "fileName",
+            "string"
+          ]
+        ]
+      ],
+      [
+        "DeleteBlob",
+        "void",
+        [
+          [
+            "name",
+            "string"
+          ]
+        ]
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "INewsAPIService",
+    "type": "interface",
+    "namespace": "LinkedInClone.Services",
+    "bases": [],
+    "attributes": [],
+    "operations": [
+      [
+        "GetHeadlines",
+        "Task<NewsResponse>",
+        []
+      ]
+    ],
+    "relationships": []
+  },
+  {
+    "name": "NewsAPIService",
+    "type": "class",
+    "namespace": "LinkedInClone.Services",
+    "bases": [
+      "INewsAPIService"
+    ],
+    "attributes": [
+      [
+        "client",
+        "HttpClient"
+      ]
+    ],
+    "operations": [
+      [
+        "GetHeadlines",
+        "Task<NewsResponse>",
+        []
+      ]
+    ],
+    "relationships": [
+      [
+        "HttpClient",
+        "association",
+        "1",
+        "1"
+      ]
+    ]
+  }
+]

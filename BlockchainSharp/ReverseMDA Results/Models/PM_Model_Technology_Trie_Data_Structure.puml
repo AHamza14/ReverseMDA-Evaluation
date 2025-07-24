@@ -1,0 +1,16 @@
+@startuml PM_Model_Technology_Trie_Data_Structure
+' PM: Technology Trie Data Structure Model
+
+package "Trie Data Structure" {
+    class Trie {
+        +leafs
+        +value
+        +Put()
+        +Get()
+        +Remove()
+        +IsEmpty()
+        +CloneLeafs()
+    }
+}
+
+@enduml

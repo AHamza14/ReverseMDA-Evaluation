@@ -1,0 +1,12 @@
+@startuml PM_Model_Technology_Messaging
+' PM: Technology Messaging Model
+
+package "Messaging" {
+    enum MessageType {
+        BlockMessage
+        TransactionMessage
+        StatusMessage
+    }
+}
+
+@enduml

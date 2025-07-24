@@ -1,0 +1,17 @@
+@startuml PM_Model_DesignPattern_Store_Repository
+' PM: Design Pattern Store (Repository) Model
+
+package "Store Pattern" {
+    class Store {
+        +blocks
+        +GetById()
+        +GetByParent()
+        +Save()
+        +Remove()
+    }
+}
+
+Store ..> Trie : dependency
+Store ..|> Trie : compatibility
+
+@enduml

@@ -1,0 +1,111 @@
+{
+"PIM":
+{
+  "true_positives": {
+    "count": 18,
+    "items": [
+      ["person", "party", "inheritance"],
+      ["company", "party", "inheritance"],
+      ["inventorydocument", "document", "inheritance"],
+      ["purchasedocument", "document", "inheritance"],
+      ["saledocument", "document", "inheritance"],
+      ["saledocument", "party", "1", "1", "association"],
+      ["inventoryproductdocument", "productdocument", "inheritance"],
+      ["purchaseproductdocument", "productdocument", "inheritance"],
+      ["saleproductdocument", "productdocument", "inheritance"],
+      ["calculationfactor", "factor", "1", "1", "association"],
+      ["document", "party", "1", "1", "association"],
+      ["document", "productdocument", "1", "*", "association"],
+      ["product", "measurement", "1", "1", "association"],
+      ["product", "subsidiarymeasurement", "1", "1", "association"],
+      ["productdocument", "product", "1", "1", "association"],
+      ["productdocument", "calculationfactor", "1", "*", "association"],
+      ["subsidiarymeasurement", "measurement", "1", "1", "association"],
+      ["company", "party", "1", "1", "association"]
+    ]
+  },
+  "false_positives": {
+    "count": 13,
+    "items": [
+      ["calculationfactor", "baseclass", "inheritance"],
+      ["document", "baseclass", "inheritance"],
+      ["factor", "baseclass", "inheritance"],
+      ["measurement", "baseclass", "inheritance"],
+      ["party", "baseclass", "inheritance"],
+      ["product", "baseclass", "inheritance"],
+      ["productdocument", "baseclass", "inheritance"],
+      ["subsidiarymeasurement", "baseclass", "inheritance"],
+      ["baseclass", "guid", "1", "1", "association"],
+      ["document", "datetime", "1", "1", "association"],
+      ["party", "datetime", "1", "1", "association"],
+      ["productdocument", "t", "1", "1", "association"],
+      ["inventorydocument", "inventoryproductdocument", "1", "*", "association"],
+      ["inventoryproductdocument", "inventorydocument", "1", "1", "association"],
+      ["purchasedocument", "purchaseproductdocument", "1", "*", "association"],
+      ["purchaseproductdocument", "purchasedocument", "1", "1", "association"],
+      ["saledocument", "saleproductdocument", "1", "*", "association"],
+      ["saleproductdocument", "saledocument", "1", "1", "association"]
+    ]
+  },
+  "false_negatives": {
+    "count": 3,
+    "items": [
+      ["calculationfactor", "factor", "1", "1", "association"],
+      ["company", "party", "1", "1", "association"],
+      ["subsidiarymeasurement", "measurement", "1", "1", "association"]
+    ]
+  },
+  "precision": 0.58,
+  "recall": 0.86,
+  "f1_score": 0.69
+}
+
+}
+
+{
+"PM":
+{
+  "true_positives": {
+    "count": 7,
+    "items": [
+      ["controller", "service", "dependency"],
+      ["service", "repository", "dependency"],
+      ["repository", "unitofwork", "dependency"],
+      ["sessionfactory", "session", "dependency"],
+      ["session", "transaction", "dependency"],
+      ["interceptor", "sessionfactory", "dependency"],
+      ["repository", "unitofwork", "dependency"]
+    ]
+  },
+  "false_positives": {
+    "count": 8,
+    "items": [
+      ["model", "controller", "compatibility"],
+      ["model", "service", "compatibility"],
+      ["repository", "unitofwork", "compatibility"],
+      ["map", "mappingoverride", "refinement"],
+      ["mappingoverride", "automappingconfiguration", "dependency"],
+      ["automappingconfiguration", "sessionfactory", "dependency"],
+      ["convention", "mappingoverride", "dependency"],
+      ["installer", "container", "dependency"],
+      ["dependencyinjection", "installer", "dependency"],
+      ["mappingoverride", "convention", "compatibility"]
+    ]
+  },
+  "false_negatives": {
+    "count": 6,
+    "items": [
+      ["unitofwork", "sessionfactory", "dependency"],
+      ["unitofwork", "iunitofwork", "refinement"],
+      ["controller", "icontroller", "refinement"],
+      ["repository", "irepository", "refinement"],
+      ["repository", "isession", "dependency"],
+      ["service", "iservice", "refinement"]
+    ]
+  },
+  "precision": 0.47,
+  "recall": 0.54,
+  "f1_score": 0.50
+}
+
+}

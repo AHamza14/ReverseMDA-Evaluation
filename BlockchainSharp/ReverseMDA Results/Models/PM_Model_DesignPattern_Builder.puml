@@ -1,0 +1,17 @@
+@startuml PM_Model_DesignPattern_Builder
+' PM: Design Pattern Builder Model
+
+package "Builder Pattern" {
+    class Builder {
+        +address
+        +origin
+        +caller
+        +coinbase
+        +SetProperty()
+        +Build()
+    }
+}
+
+Builder --|> ProgramEnvironment : refinement
+
+@enduml

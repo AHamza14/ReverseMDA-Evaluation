@@ -1,0 +1,22 @@
+@startuml PM_Model_Technology_Azure_SDK
+' PM: Technology Azure SDK Model
+
+package "Azure SDK" {
+    class BlobServiceClient
+    class BlobContainerClient
+    class AzureClientFactoryBuilder
+    interface IAzureClientBuilder {
+        +serviceClient
+        +clientOptions
+    }
+    class BlobClientOptions
+    class QueueServiceClient
+    class QueueClientOptions
+}
+
+BlobServiceClient ..|> BlobContainerClient
+IAzureClientBuilder ..|> BlobClientOptions
+IAzureClientBuilder ..|> QueueClientOptions
+AzureClientFactoryBuilder ..|> IAzureClientBuilder
+
+@enduml
